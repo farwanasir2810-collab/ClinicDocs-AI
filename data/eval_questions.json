@@ -1,0 +1,88 @@
+[
+  {
+    "id": "q1",
+    "type": "in_domain",
+    "question": "What are the clinic operating hours on Friday?",
+    "expected_keywords": ["9:00 AM", "1:00 PM", "3:00 PM", "8:00 PM"],
+    "expected_page": 1,
+    "history": []
+  },
+  {
+    "id": "q2",
+    "type": "in_domain",
+    "question": "Is Noor Care Clinic open on Sunday?",
+    "expected_keywords": ["closed", "sunday"],
+    "expected_page": 1,
+    "history": []
+  },
+  {
+    "id": "q3",
+    "type": "in_domain",
+    "question": "What is the consultation fee for a pediatric patient?",
+    "expected_keywords": ["1,200", "pediatric"],
+    "expected_page": 2,
+    "history": []
+  },
+  {
+    "id": "q4",
+    "type": "in_domain",
+    "question": "How much advance notice is required to cancel an appointment, and what is the fee for late cancellation?",
+    "expected_keywords": ["12 hours", "500"],
+    "expected_page": 2,
+    "history": []
+  },
+  {
+    "id": "q5",
+    "type": "in_domain",
+    "question": "How quickly can I get my Complete Blood Count (CBC) test results?",
+    "expected_keywords": ["4 hours", "cbc"],
+    "expected_page": 3,
+    "history": []
+  },
+  {
+    "id": "q6",
+    "type": "follow_up",
+    "question": "What about for a specialist doctor?",
+    "expected_keywords": ["3,000", "specialist"],
+    "expected_page": 2,
+    "history": [
+      ["human", "How much does a general physician consultation cost?"],
+      ["ai", "A general physician consultation costs PKR 1,500."]
+    ]
+  },
+  {
+    "id": "q7",
+    "type": "follow_up",
+    "question": "How long does it take and what is the processing fee?",
+    "expected_keywords": ["3 working days", "300"],
+    "expected_page": 4,
+    "history": [
+      ["human", "Can I get a physical copy of my medical records?"],
+      ["ai", "Yes, patients requesting a physical certified copy of their medical records must submit a formal written request along with government-issued photo ID."]
+    ]
+  },
+  {
+    "id": "q8",
+    "type": "out_of_domain",
+    "question": "What is the capital city of France?",
+    "expected_keywords": ["couldn't find", "uploaded documents"],
+    "expected_page": null,
+    "history": []
+  },
+  {
+    "id": "q9",
+    "type": "out_of_domain",
+    "question": "Which specific doctor is on duty for general OPD on Monday morning?",
+    "expected_keywords": ["couldn't find", "uploaded documents"],
+    "expected_page": null,
+    "history": []
+  },
+  {
+    "id": "q10",
+    "type": "out_of_domain",
+    "question": "Can I bring my pet dog inside the clinic waiting area?",
+    "expected_keywords": ["couldn't find", "uploaded documents"],
+    "expected_page": null,
+    "history": []
+  }
+]
