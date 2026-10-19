@@ -1,28 +1,23 @@
-# Core LangChain Framework (Pinned stable v0.3 ecosystem)
-langchain==0.3.7
-langchain-core==0.3.15
-langchain-community==0.3.5
-langchain-text-splitters==0.3.2
+# Core LangChain Framework (LCEL ecosystem)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
 
 # Vector Store & Lightweight Embeddings
-chromadb==0.5.15
-langchain-chroma==0.1.4
-fastembed==0.3.4
+chromadb>=0.5.0
+langchain-chroma>=0.1.4
+fastembed>=0.3.4
 
 # SQLite Cloud Shim (Linux-only for Streamlit Community Cloud)
 pysqlite3-binary>=0.5.2; sys_platform == 'linux'
 
 # LLM Provider Integrations (Groq & Google Gemini)
-langchain-groq==0.2.1
-langchain-google-genai==2.0.4
+langchain-groq>=0.2.0
+langchain-google-genai>=2.0.0
 
 # PDF Processing & Utilities
-pypdf==5.1.0
-python-dotenv==1.0.1
-psutil==6.1.0
-
-# Web Application UI
-streamlit==1.39.0
-
-# Testing & Benchmarking
-pytest==8.3.3
+pypdf>=5.0.0
+python-dotenv>=1.0.1
+psutil>=6.0.0
+tenacity>=8.0.0
