@@ -12,8 +12,8 @@
 ---
 
 ## 🌐 Live Demo & Repository
-- **Live Web Application**: [https://clinicdocs-ai.streamlit.app](https://clinicdocs-ai.streamlit.app) *(Replace with your live link)*
-- **GitHub Repository**: [https://github.com/YOUR_USERNAME/clinicdocs-ai](https://github.com/YOUR_USERNAME/clinicdocs-ai)
+- **Live Web Application**: [https://clinicdocs-ai.streamlit.app](https://clinicdocs-ai.streamlit.app)
+- **GitHub Repository**: [https://github.com/farwanasir2810-collab/clinicdocs-ai](https://github.com/farwanasir2810-collab/clinicdocs-ai)
 
 ---
 
