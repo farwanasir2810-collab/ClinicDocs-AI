@@ -7,47 +7,53 @@
   <!-- ===================================================================== -->
   <!-- SEO & Social Sharing Metadata                                         -->
   <!-- ===================================================================== -->
-  <title>Farwa Nasir | AI & Machine Learning Software Engineer</title>
-  <meta name="description" content="Portfolio of Farwa Nasir — Software Engineering Student & ML Intern specializing in Production-grade Conversational RAG, LLM applications, and vector search architectures.">
-  <meta name="keywords" content="Farwa Nasir, AI Engineer, Machine Learning Intern, RAG, LangChain, ChromaDB, FastEmbed, Streamlit, Python, LLM, Portfolio">
-  <meta name="author" content="Farwa Nasir">
-  <link rel="canonical" href="https://farwanasir2810-collab.github.io/clinicdocs-ai/">
+  <title>Farwa Ali Nasir | AI & Machine Learning Software Engineer</title>
+  <meta name="description" content="Portfolio of Farwa Ali Nasir — Software Engineering Student & ML Intern specializing in Production-grade Conversational RAG, hallucination-resistant architectures, and low-latency LLM pipelines.">
+  <meta name="keywords" content="Farwa Ali Nasir, Farwa Nasir, AI Engineer, Machine Learning Engineer, RAG, LangChain, ChromaDB, FastEmbed, ONNX, Streamlit, Python, LLM, Vector Search">
+  <meta name="author" content="Farwa Ali Nasir">
+  <link rel="canonical" href="https://farwanasir2810-collab.github.io/ClinicDocs-AI/">
 
   <!-- Open Graph / LinkedIn / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://farwanasir2810-collab.github.io/clinicdocs-ai/">
-  <meta property="og:title" content="Farwa Nasir | AI & Machine Learning Software Engineer">
-  <meta property="og:description" content="Explore ClinicDocs AI (Production RAG) and machine learning portfolio by Farwa Nasir.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/farwanasir2810-collab/clinicdocs-ai/main/docs/preview.png">
+  <meta property="og:url" content="https://farwanasir2810-collab.github.io/ClinicDocs-AI/">
+  <meta property="og:title" content="Farwa Ali Nasir | AI & Machine Learning Software Engineer">
+  <meta property="og:description" content="Production-grade Conversational RAG, hallucination-resistant architectures, and vector search engineering by Farwa Ali Nasir.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/farwanasir2810-collab/ClinicDocs-AI/main/docs/preview.png">
 
-  <!-- Twitter / X -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Farwa Nasir | AI & Machine Learning Software Engineer">
-  <meta name="twitter:description" content="Specializing in Production-grade Conversational RAG, LLM architectures, and low-latency embeddings.">
+  <meta name="twitter:title" content="Farwa Ali Nasir | AI & Machine Learning Software Engineer">
+  <meta name="twitter:description" content="Explore ClinicDocs AI (Production RAG) and machine learning engineering portfolio by Farwa Ali Nasir.">
 
-  <!-- JSON-LD Structured Data for Google Search -->
+  <!-- Google Schema JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Farwa Nasir",
+    "name": "Farwa Ali Nasir",
+    "alternateName": "Farwa Nasir",
     "jobTitle": "AI & Machine Learning Software Engineer",
-    "url": "https://farwanasir2810-collab.github.io/clinicdocs-ai/",
+    "url": "https://farwanasir2810-collab.github.io/ClinicDocs-AI/",
     "sameAs": [
-      "https://github.com/farwanasir2810-collab",
-      "https://linkedin.com/in/farwa-nasir"
+      "https://github.com/farwanasir2810-collab"
     ],
     "knowsAbout": [
       "Retrieval-Augmented Generation (RAG)",
-      "LangChain",
-      "Vector Databases (ChromaDB)",
-      "FastEmbed ONNX",
-      "Python",
-      "Scikit-learn",
-      "Streamlit Cloud"
+      "LangChain & LCEL",
+      "ChromaDB Vector Store",
+      "FastEmbed ONNX Runtime",
+      "Python 3.11",
+      "Software Engineering",
+      "Machine Learning",
+      "Hallucination Mitigation & Guardrails"
     ]
   }
   </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -60,9 +66,11 @@
             brand: {
               cyan: '#06B6D4',
               emerald: '#10B981',
-              dark: '#0B0F19',
-              card: '#111827',
-              border: 'rgba(255, 255, 255, 0.08)'
+              dark: '#07090E',
+              darker: '#040609',
+              card: '#0D131F',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderHover: 'rgba(6, 182, 212, 0.35)'
             }
           },
           fontFamily: {
@@ -77,55 +85,100 @@
   <style>
     /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0B0F19; }
+    ::-webkit-scrollbar-track { background: #07090E; }
     ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #374151; }
+    ::-webkit-scrollbar-thumb:hover { background: #06B6D4; }
 
-    /* Subtle Glassmorphism */
+    /* Glassmorphism Styles */
     .glass {
-      background: rgba(17, 24, 39, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(13, 19, 31, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     
-    .glow-cyan {
-      box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.25);
+    .glass-card {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(13, 19, 31, 0.6) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease-in-out;
+    }
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15);
     }
 
     .badge-gradient {
-      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(16, 185, 129, 0.15));
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(16, 185, 129, 0.12));
       border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    /* Grid background */
+    .bg-grid {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* Glow utilities */
+    .glow-cyan {
+      box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.3);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Active tab styling */
+    .tab-active {
+      background: rgba(6, 182, 212, 0.15) !important;
+      color: #38BDF8 !important;
+      border-color: #06B6D4 !important;
     }
   </style>
 </head>
-<body class="bg-brand-dark text-slate-200 antialiased selection:bg-cyan-500/20 selection:text-cyan-300">
+<body class="bg-brand-dark text-slate-200 antialiased selection:bg-cyan-500/20 selection:text-cyan-300 font-sans relative bg-grid">
 
   <!-- ===================================================================== -->
   <!-- NAVIGATION BAR                                                        -->
   <!-- ===================================================================== -->
   <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-brand-border">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2 group">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center text-slate-950 font-bold text-sm shadow-md">FN</span>
-        <span class="font-semibold text-white tracking-tight group-hover:text-cyan-400 transition-colors">Farwa Nasir</span>
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-emerald-400 flex items-center justify-center text-slate-950 font-black text-xs shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          FAN
+        </div>
+        <div>
+          <span class="font-bold text-white tracking-tight group-hover:text-cyan-300 transition-colors text-sm sm:text-base">Farwa Ali Nasir</span>
+          <span class="hidden sm:inline-block text-[10px] text-cyan-400 font-mono ml-2 px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/60">AI & ML Engineer</span>
+        </div>
       </a>
 
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="#featured" class="hover:text-cyan-400 transition-colors">Featured Project</a>
-        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+      <!-- Navigation Links -->
+      <div class="hidden lg:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-400">
+        <a href="#featured" class="hover:text-cyan-400 transition-colors">Flagship RAG</a>
+        <a href="#playground" class="hover:text-cyan-400 transition-colors text-cyan-400 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          Live Sandbox
+        </a>
+        <a href="#architecture" class="hover:text-cyan-400 transition-colors">Architecture</a>
         <a href="#benchmarks" class="hover:text-cyan-400 transition-colors">Benchmarks</a>
-        <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+        <a href="#code" class="hover:text-cyan-400 transition-colors">Code Inspector</a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
       </div>
 
+      <!-- Action Buttons -->
       <div class="flex items-center gap-3">
-        <a href="https://github.com/farwanasir2810-collab" target="_blank" rel="noopener" class="p-2 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white transition-colors" title="GitHub Profile">
+        <a href="https://github.com/farwanasir2810-collab" target="_blank" rel="noopener" class="p-2 rounded-xl hover:bg-slate-800 text-slate-400 hover:text-white transition-colors border border-transparent hover:border-brand-border" title="GitHub Profile">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         </a>
-        <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="text-xs font-semibold px-3 py-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 transition-all flex items-center gap-1.5 shadow-sm">
+        <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="text-xs font-bold px-3.5 py-2 rounded-xl bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 hover:from-cyan-500/30 hover:to-emerald-500/30 text-cyan-300 border border-cyan-500/40 transition-all flex items-center gap-2 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-          Live Demo
+          <span>Live App</span>
         </a>
       </div>
     </div>
@@ -134,384 +187,1042 @@
   <!-- ===================================================================== -->
   <!-- HERO SECTION                                                          -->
   <!-- ===================================================================== -->
-  <section id="home" class="pt-32 pb-20 px-6 relative overflow-hidden">
-    <!-- Background Radial Glow -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+  <section id="home" class="pt-36 pb-20 px-6 relative overflow-hidden">
+    <!-- Ambient Blur Spheres -->
+    <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[700px] h-[380px] bg-cyan-500/10 blur-[150px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-44 left-1/3 w-[350px] h-[250px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <!-- Status Pill -->
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full badge-gradient text-cyan-300 text-xs font-medium mb-6">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>Open to AI / Machine Learning & Software Engineering Roles</span>
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      
+      <!-- Availability Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-gradient text-cyan-300 text-xs font-semibold tracking-wide mb-8 shadow-sm">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span>Available for AI / ML & Software Engineering Roles</span>
       </div>
 
-      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
-        Hi, I'm <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">Farwa Nasir</span>
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+        Hi, I'm <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">Farwa Ali Nasir</span>
       </h1>
 
-      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
-        Software Engineering student & ML intern specializing in <span class="text-cyan-300 font-semibold">Production-Grade RAG Systems</span>, hallucination-resistant architectures, and latency-optimized LLM pipelines.
+      <!-- Value Proposition -->
+      <p class="text-lg sm:text-2xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+        Software Engineering student & ML intern engineering <span class="text-cyan-300 font-semibold">hallucination-resistant RAG systems</span>, ONNX-accelerated vector search, and latency-budgeted production LLM architectures.
       </p>
 
-      <!-- CTA Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 text-sm font-semibold">
-        <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold transition-all shadow-lg hover:shadow-cyan-500/25 flex items-center gap-2">
-          <span>Explore ClinicDocs AI</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm font-bold">
+        <a href="#playground" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-black transition-all shadow-xl hover:shadow-cyan-500/25 flex items-center gap-2 group">
+          <svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Try Interactive Sandbox</span>
         </a>
-        <a href="https://github.com/farwanasir2810-collab/clinicdocs-ai" target="_blank" rel="noopener" class="px-6 py-3 rounded-xl glass hover:bg-slate-800 text-slate-200 hover:text-white transition-all flex items-center gap-2 border border-brand-border">
+        <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl glass hover:bg-slate-800 text-slate-200 hover:text-white transition-all flex items-center gap-2 border border-brand-border">
+          <span>Launch Live Streamlit App</span>
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a href="https://github.com/farwanasir2810-collab/ClinicDocs-AI" target="_blank" rel="noopener" class="px-5 py-3.5 rounded-xl glass hover:bg-slate-800 text-slate-300 hover:text-white transition-all flex items-center gap-2 border border-brand-border">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>View GitHub Code</span>
+          <span>GitHub Code</span>
         </a>
       </div>
 
-      <!-- Quick Metrics Ribbon -->
-      <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
-        <div class="glass p-4 rounded-xl border border-brand-border">
-          <div class="text-2xl font-extrabold text-cyan-400">100%</div>
-          <div class="text-xs text-slate-400 mt-0.5">Benchmark Accuracy</div>
+      <!-- Verified Metric Highlights -->
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <div class="text-3xl font-black text-cyan-400">100%</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Evaluation Benchmark (10/10)</div>
         </div>
-        <div class="glass p-4 rounded-xl border border-brand-border">
-          <div class="text-2xl font-extrabold text-emerald-400">&lt; 25 ms</div>
-          <div class="text-xs text-slate-400 mt-0.5">Gate Refusal Speed</div>
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <div class="text-3xl font-black text-emerald-400">&lt; 25 ms</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Gate Refusal Intercept Speed</div>
         </div>
-        <div class="glass p-4 rounded-xl border border-brand-border">
-          <div class="text-2xl font-extrabold text-cyan-400">136 MB</div>
-          <div class="text-xs text-slate-400 mt-0.5">ONNX Model Footprint</div>
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <div class="text-3xl font-black text-cyan-400">136 MB</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">FastEmbed ONNX Footprint</div>
         </div>
-        <div class="glass p-4 rounded-xl border border-brand-border">
-          <div class="text-2xl font-extrabold text-emerald-400">0 Tokens</div>
-          <div class="text-xs text-slate-400 mt-0.5">Wasted on OOD Queries</div>
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <div class="text-3xl font-black text-emerald-400">0 Tokens</div>
+          <div class="text-xs text-slate-400 mt-1 font-medium">Wasted on OOD Queries</div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- FEATURED PROJECT DEEP-DIVE: CLINICDOCS AI                             -->
+  <!-- INTERACTIVE LIVE RAG PLAYGROUND (THE RECRUITER WOW FACTOR)             -->
   <!-- ===================================================================== -->
-  <section id="featured" class="py-20 px-6 border-t border-brand-border">
+  <section id="playground" class="py-20 px-6 border-t border-brand-border relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <span class="text-cyan-400 font-bold text-xs tracking-widest uppercase bg-cyan-950/60 px-3 py-1 rounded-full border border-cyan-800/60">
+          ⚡ In-Browser Demonstration
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
+          Interactive RAG Pipeline Sandbox
+        </h2>
+        <p class="text-slate-400 text-sm max-w-2xl mx-auto mt-2">
+          Experience the two-layer refusal gate and vector similarity scoring live. Click any test scenario below to simulate how Farwa's architecture processes queries without wasting tokens:
+        </p>
+      </div>
+
+      <!-- Sandbox Interface -->
+      <div class="glass rounded-2xl border border-brand-border overflow-hidden shadow-2xl">
+        
+        <!-- Top bar -->
+        <div class="bg-slate-900/90 px-5 py-3.5 border-b border-brand-border flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="text-xs font-mono text-slate-400 ml-2">clinicdocs_rag_simulator.py — Session Active</span>
+          </div>
+          <span class="text-xs font-mono text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-800">
+            Threshold: s ≥ 0.48
+          </span>
+        </div>
+
+        <div class="p-6 space-y-6">
+          
+          <!-- Scenario selector buttons -->
+          <div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+              Select Test Scenario:
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <button onclick="runSimulation('indomain')" id="btn-indomain" class="p-3.5 rounded-xl border border-cyan-500/40 bg-cyan-950/30 text-left hover:bg-cyan-950/50 transition-all group">
+                <div class="flex items-center justify-between text-xs font-bold text-cyan-400 mb-1">
+                  <span>1. In-Domain Fact</span>
+                  <span class="text-[10px] bg-cyan-500/20 px-1.5 py-0.5 rounded">High Conf</span>
+                </div>
+                <div class="text-xs text-slate-300 font-mono">Friday clinic hours?</div>
+              </button>
+
+              <button onclick="runSimulation('followup')" id="btn-followup" class="p-3.5 rounded-xl border border-brand-border bg-slate-900/40 text-left hover:bg-slate-900/70 transition-all group">
+                <div class="flex items-center justify-between text-xs font-bold text-emerald-400 mb-1">
+                  <span>2. Multi-Turn Follow-up</span>
+                  <span class="text-[10px] bg-emerald-500/20 px-1.5 py-0.5 rounded">Rewriter</span>
+                </div>
+                <div class="text-xs text-slate-300 font-mono">What about specialist fee?</div>
+              </button>
+
+              <button onclick="runSimulation('gate_refusal')" id="btn-gate_refusal" class="p-3.5 rounded-xl border border-brand-border bg-slate-900/40 text-left hover:bg-slate-900/70 transition-all group">
+                <div class="flex items-center justify-between text-xs font-bold text-red-400 mb-1">
+                  <span>3. Layer 1 Gate Refusal</span>
+                  <span class="text-[10px] bg-red-500/20 px-1.5 py-0.5 rounded">&lt;25ms</span>
+                </div>
+                <div class="text-xs text-slate-300 font-mono">Capital of France?</div>
+              </button>
+
+              <button onclick="runSimulation('prompt_refusal')" id="btn-prompt_refusal" class="p-3.5 rounded-xl border border-brand-border bg-slate-900/40 text-left hover:bg-slate-900/70 transition-all group">
+                <div class="flex items-center justify-between text-xs font-bold text-amber-400 mb-1">
+                  <span>4. Layer 2 Grounding</span>
+                  <span class="text-[10px] bg-amber-500/20 px-1.5 py-0.5 rounded">Strict</span>
+                </div>
+                <div class="text-xs text-slate-300 font-mono">Who is on duty Monday?</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Telemetry Live Bar -->
+          <div class="p-4 rounded-xl bg-slate-950/70 border border-brand-border grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+            <div>
+              <span class="text-slate-500 block">Vector Similarity (s):</span>
+              <span id="tel-sim" class="text-base font-bold text-cyan-400">0.782</span>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full mt-1.5 overflow-hidden">
+                <div id="tel-bar" class="bg-cyan-400 h-full rounded-full transition-all duration-500" style="width: 78.2%"></div>
+              </div>
+            </div>
+            <div>
+              <span class="text-slate-500 block">Layer 1 Cosine Gate:</span>
+              <span id="tel-gate" class="text-base font-bold text-emerald-400">PASSED (s ≥ 0.48)</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">System Latency:</span>
+              <span id="tel-latency" class="text-base font-bold text-slate-200">0.82 s</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">LLM Tokens Billed:</span>
+              <span id="tel-tokens" class="text-base font-bold text-emerald-400">184 tokens</span>
+            </div>
+          </div>
+
+          <!-- Chat Conversation Display -->
+          <div class="space-y-4">
+            <!-- User Bubble -->
+            <div class="flex items-start gap-3">
+              <span class="w-7 h-7 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-bold text-slate-300 shrink-0">U</span>
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-brand-border text-sm text-slate-200" id="chat-query">
+                What are the clinic operating hours on Friday?
+              </div>
+            </div>
+
+            <!-- Bot Response Bubble -->
+            <div class="flex items-start gap-3">
+              <span class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-xs font-bold text-cyan-300 shrink-0">AI</span>
+              <div class="p-4 rounded-xl bg-slate-950/90 border border-brand-border flex-1 space-y-3">
+                <div id="chat-status" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono bg-cyan-950 text-cyan-400 border border-cyan-800">
+                  <span>⚡ Grounded Citation Response</span>
+                </div>
+                <div id="chat-response" class="text-sm text-slate-200 leading-relaxed font-sans">
+                  On Friday, Noor Care Clinic operates in two shifts:<br>
+                  • <strong>Morning Shift:</strong> 9:00 AM – 1:00 PM<br>
+                  • <strong>Evening Shift:</strong> 3:00 PM – 8:00 PM<br>
+                  <em>Note: The clinic is closed between 1:00 PM and 3:00 PM for Friday prayers.</em>
+                </div>
+                <!-- Citation Box -->
+                <div id="chat-citation" class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300 font-sans flex items-center justify-between">
+                  <span class="flex items-center gap-2">
+                    <span>📄</span>
+                    <strong class="text-white">Noor_Care_Clinic_FAQ.pdf</strong>
+                    <span class="text-emerald-400 font-mono font-bold">— Page 1</span>
+                  </span>
+                  <span class="font-mono text-cyan-400 text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">
+                    Match: 78.2%
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FLAGSHIP CASE STUDY: CLINICDOCS AI                                   -->
+  <!-- ===================================================================== -->
+  <section id="featured" class="py-20 px-6 border-t border-brand-border bg-slate-950/30">
     <div class="max-w-6xl mx-auto">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
         <div>
-          <span class="text-cyan-400 font-semibold text-xs tracking-wider uppercase">Flagship Engineering Case Study</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">ClinicDocs AI: Production RAG</h2>
+          <span class="text-cyan-400 font-bold text-xs tracking-widest uppercase">Production Architecture Deep-Dive</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+            ClinicDocs AI: Production-Grade RAG
+          </h2>
         </div>
         <div class="mt-4 md:mt-0 flex gap-3">
-          <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="text-xs font-semibold px-4 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-colors flex items-center gap-1.5 shadow-md">
-            <span>Launch Live App</span>
+          <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="text-xs font-bold px-4 py-2.5 rounded-xl bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-colors flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+            <span>Open Streamlit App</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Problem vs Solution Cards -->
-      <div class="grid md:grid-cols-2 gap-6 mb-12">
-        <div class="glass p-6 rounded-2xl border border-red-500/20 bg-red-950/10">
-          <div class="flex items-center gap-2 text-red-400 font-semibold text-sm mb-3">
-            <span class="p-1 rounded bg-red-500/10 border border-red-500/20">❌</span>
-            <span>The Production RAG Problem</span>
+      <!-- Problem vs Solution Comparison Cards -->
+      <div class="grid md:grid-cols-2 gap-6 mb-14">
+        
+        <div class="glass-card p-6 rounded-2xl border-red-500/20 bg-red-950/10">
+          <div class="flex items-center gap-2 text-red-400 font-bold text-sm mb-3">
+            <span class="w-6 h-6 rounded-lg bg-red-500/20 border border-red-500/40 flex items-center justify-center text-xs">✕</span>
+            <span>Why "Toy Tutorial RAG" Fails in Production</span>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Most tutorial RAG implementations fail in real-world deployment. They pull in heavy PyTorch wheels (~800MB) causing <strong>Out-Of-Memory (OOM)</strong> container crashes, store documents on shared disks leaking data between users, and hallucinate answers when asked out-of-domain queries.
-          </p>
+          <ul class="text-slate-300 text-sm space-y-2.5 leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>OOM Crashes:</strong> Heavy PyTorch wheels (~800MB) exceed 1GB serverless caps, crashing container runtimes immediately.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>Data Contamination:</strong> Storing vector collections on shared persistent disk leaks private documents between concurrent sessions.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>Hallucinations & Token Waste:</strong> Irrelevant queries invoke full LLM completion, racking up API cost while producing fabricated answers.</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="glass p-6 rounded-2xl border border-emerald-500/20 bg-emerald-950/10">
-          <div class="flex items-center gap-2 text-emerald-400 font-semibold text-sm mb-3">
-            <span class="p-1 rounded bg-emerald-500/10 border border-emerald-500/20">✅</span>
-            <span>The ClinicDocs AI Solution</span>
+        <div class="glass-card p-6 rounded-2xl border-emerald-500/20 bg-emerald-950/10">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-3">
+            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs">✓</span>
+            <span>Farwa's Production-Hardened Architecture</span>
           </div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Built an enterprise-ready architecture with <strong>FastEmbed ONNX</strong> (slashing RAM by 70%), an in-memory <strong>ephemeral ChromaDB</strong> layer with LRU eviction for zero-disk retention, and an empirical <strong>Two-Layer Refusal Gate</strong> that cuts latency on out-of-domain queries to &lt;25ms.
-          </p>
+          <ul class="text-slate-300 text-sm space-y-2.5 leading-relaxed">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">•</span>
+              <span><strong>FastEmbed ONNX Runtime:</strong> Strips PyTorch completely, cutting memory footprint by 70% (peaks at only 423MB under full load).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">•</span>
+              <span><strong>In-Memory Ephemeral Isolation:</strong> Session-keyed collections via <code>chromadb.EphemeralClient()</code> with LRU eviction cap guarantees zero cross-leakage.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 font-bold">•</span>
+              <span><strong>Two-Layer Refusal Gate:</strong> Intercepts OOD questions in &lt;25ms with 0 LLM tokens, backed by strict prompt grounding for near-topic guardrails.</span>
+            </li>
+          </ul>
         </div>
+
       </div>
 
-      <!-- Architecture Breakdown: 4 Pillars -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div class="glass p-5 rounded-xl border border-brand-border hover:border-cyan-500/30 transition-all">
-          <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-sm mb-4">1</div>
-          <h3 class="text-white font-semibold text-base mb-2">Two-Layer Refusal</h3>
+      <!-- Core 4 Pillars Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-sm mb-4">
+            01
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">Two-Layer Refusal Gate</h3>
           <p class="text-slate-400 text-xs leading-relaxed">
-            Cosine similarity gate ($s &lt; 0.48$) intercepts unrelated queries in 20ms using 0 LLM tokens. Strict prompt grounding handles near-topic unanswerable questions.
+            Layer 1 compares max cosine similarity ($s &lt; 0.48$) and halts in 18ms. Layer 2 applies XML grounding prompts to catch deceptive near-topic queries without hallucinations.
           </p>
         </div>
 
-        <div class="glass p-5 rounded-xl border border-brand-border hover:border-cyan-500/30 transition-all">
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">2</div>
-          <h3 class="text-white font-semibold text-base mb-2">Ephemeral Isolation</h3>
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">
+            02
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">Ephemeral Multi-Tenancy</h3>
           <p class="text-slate-400 text-xs leading-relaxed">
-            Chroma collections are strictly tied to unique session UUIDs in RAM with LRU eviction cap (max 10). Guaranteed zero multi-user cross-contamination.
+            Zero disk persistence. Vector stores live in ephemeral RAM tied to session UUIDs with an LRU cache capping active collections to 10 to prevent container memory leaks.
           </p>
         </div>
 
-        <div class="glass p-5 rounded-xl border border-brand-border hover:border-cyan-500/30 transition-all">
-          <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-sm mb-4">3</div>
-          <h3 class="text-white font-semibold text-base mb-2">FastEmbed ONNX</h3>
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-bold text-sm mb-4">
+            03
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">FastEmbed ONNX Vectorizer</h3>
           <p class="text-slate-400 text-xs leading-relaxed">
-            Replaced PyTorch with pure ONNX runtime (<code class="text-cyan-300">bge-small-en-v1.5</code>). Cold-starts in 2.2s and peaks at only 423MB RAM under full load.
+            Employs quantized ONNX runtime for <code>BAAI/bge-small-en-v1.5</code>. Cold start drops from 12.4s to 2.22s with a model memory delta of only +136MB.
           </p>
         </div>
 
-        <div class="glass p-5 rounded-xl border border-brand-border hover:border-cyan-500/30 transition-all">
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">4</div>
-          <h3 class="text-white font-semibold text-base mb-2">Physical Citations</h3>
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold text-sm mb-4">
+            04
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">1-Indexed Page Citations</h3>
           <p class="text-slate-400 text-xs leading-relaxed">
-            Normalizes 0-indexed PyPDF pages to 1-indexed numbers (<code class="text-emerald-300">page + 1</code>). Outputs source document name, similarity %, and context snippet.
+            Normalizes 0-indexed PyPDF page numbers to human-readable physical pages (<code>page + 1</code>). Every answer links directly to verified source document chunks.
           </p>
         </div>
-      </div>
 
-      <!-- Live Mockup / Terminal Preview -->
-      <div class="glass rounded-2xl overflow-hidden border border-brand-border shadow-2xl">
-        <div class="bg-slate-900/90 px-4 py-3 border-b border-brand-border flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-            <span class="text-xs font-mono text-slate-400 ml-2">clinicdocs-ai — Live RAG Pipeline Verification</span>
-          </div>
-          <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">10/10 EVALS PASSED</span>
-        </div>
-        <div class="p-6 font-mono text-xs sm:text-sm text-slate-300 overflow-x-auto space-y-4">
-          <div class="flex items-start gap-2">
-            <span class="text-cyan-400 font-bold">User:</span>
-            <span class="text-white">What are the clinic operating hours on Friday?</span>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-brand-border space-y-2">
-            <div class="flex items-center gap-2 text-cyan-300 font-semibold">
-              <span>🩺 ClinicDocs AI:</span>
-              <span class="text-[11px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">⏱️ 0.82s</span>
-            </div>
-            <p class="text-slate-300 leading-relaxed font-sans text-sm">
-              On Friday, Noor Care Clinic operates in two shifts: <br>
-              • <strong>Morning Shift:</strong> 9:00 AM – 1:00 PM <br>
-              • <strong>Evening Shift:</strong> 3:00 PM – 8:00 PM <br>
-              The clinic is closed between 1:00 PM and 3:00 PM for Friday prayers.
-            </p>
-            <div class="pt-2 text-[11px] text-slate-400 font-sans border-t border-slate-800/80">
-              📄 <strong>Source Citation:</strong> <span class="text-slate-200">Noor_Care_Clinic_FAQ.pdf — Page 1</span> (Cosine Match: 72.5%)
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2 pt-2">
-            <span class="text-cyan-400 font-bold">User:</span>
-            <span class="text-white">What is the capital city of France?</span>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-950/60 border border-brand-border space-y-2">
-            <div class="flex items-center gap-2 text-red-300 font-semibold">
-              <span>🛡️ Similarity Gate Intercept:</span>
-              <span class="text-[11px] px-2 py-0.5 rounded bg-red-950 text-red-400 border border-red-800">⚡ 18 ms (0 LLM Tokens)</span>
-            </div>
-            <p class="text-slate-300 font-sans text-sm">
-              <em>"I couldn't find this in the uploaded documents."</em>
-            </p>
-          </div>
-        </div>
       </div>
 
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- EMPIRICAL BENCHMARKS TABLE                                            -->
+  <!-- ARCHITECTURE PIPELINE EXPLORER                                        -->
   <!-- ===================================================================== -->
-  <section id="benchmarks" class="py-20 px-6 border-t border-brand-border bg-slate-950/40">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10">
-        <span class="text-cyan-400 font-semibold text-xs tracking-wider uppercase">Reproducible Telemetry</span>
-        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Measured Empirical Benchmarks</h2>
-        <p class="text-slate-400 text-sm mt-2">Measured live using <code class="text-cyan-300">scripts/measure_benchmarks.py</code> on single-core CPU</p>
+  <section id="architecture" class="py-20 px-6 border-t border-brand-border">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-cyan-400 font-bold text-xs tracking-widest uppercase">Engineering Deep Dive</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+          End-to-End System Pipeline
+        </h2>
+        <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+          Click any step in the pipeline to examine the architectural decisions, trade-offs, and design patterns:
+        </p>
       </div>
 
-      <div class="glass rounded-xl overflow-hidden border border-brand-border shadow-lg">
+      <!-- Pipeline Step Buttons -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <button onclick="setArchStep(1)" id="arch-tab-1" class="tab-active p-4 rounded-xl border border-brand-border glass text-left transition-all">
+          <div class="text-[11px] font-mono text-cyan-400 font-bold mb-1">STAGE 01</div>
+          <div class="text-sm font-bold text-white">Ingestion & Validation</div>
+          <div class="text-xs text-slate-400 mt-0.5">SHA-256 + 1-indexed PyPDF</div>
+        </button>
+
+        <button onclick="setArchStep(2)" id="arch-tab-2" class="p-4 rounded-xl border border-brand-border glass text-left transition-all">
+          <div class="text-[11px] font-mono text-slate-400 font-bold mb-1">STAGE 02</div>
+          <div class="text-sm font-bold text-white">ONNX Vectorization</div>
+          <div class="text-xs text-slate-400 mt-0.5">FastEmbed BGE-small (384d)</div>
+        </button>
+
+        <button onclick="setArchStep(3)" id="arch-tab-3" class="p-4 rounded-xl border border-brand-border glass text-left transition-all">
+          <div class="text-[11px] font-mono text-slate-400 font-bold mb-1">STAGE 03</div>
+          <div class="text-sm font-bold text-white">Ephemeral Chroma Store</div>
+          <div class="text-xs text-slate-400 mt-0.5">LRU-evicted memory store</div>
+        </button>
+
+        <button onclick="setArchStep(4)" id="arch-tab-4" class="p-4 rounded-xl border border-brand-border glass text-left transition-all">
+          <div class="text-[11px] font-mono text-slate-400 font-bold mb-1">STAGE 04</div>
+          <div class="text-sm font-bold text-white">Two-Layer Guardrails</div>
+          <div class="text-xs text-slate-400 mt-0.5">Cosine gate + LCEL prompt</div>
+        </button>
+      </div>
+
+      <!-- Pipeline Details Box -->
+      <div class="glass rounded-2xl border border-brand-border p-8 shadow-xl" id="arch-content">
+        <!-- Content will be swapped dynamically by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- EMPIRICAL BENCHMARKS & TELEMETRY                                      -->
+  <!-- ===================================================================== -->
+  <section id="benchmarks" class="py-20 px-6 border-t border-brand-border bg-slate-950/40">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-cyan-400 font-bold text-xs tracking-widest uppercase">Reproducible Telemetry</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+          Measured Empirical Benchmarks
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Measured live using <code class="text-cyan-300 font-mono">scripts/measure_benchmarks.py</code> under single-core CPU constraints
+        </p>
+      </div>
+
+      <!-- Comparison Metrics Cards -->
+      <div class="grid sm:grid-cols-3 gap-6 mb-10">
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Memory Consumption</span>
+          <div class="text-3xl font-black text-cyan-400 mt-2">423.2 MB</div>
+          <p class="text-xs text-emerald-400 mt-1 font-mono">70% savings vs PyTorch (1,420MB)</p>
+          <div class="w-full bg-slate-800 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-cyan-400 h-full rounded-full" style="width: 41.3%"></div>
+          </div>
+          <span class="text-[10px] text-slate-500 mt-1 block">41.3% of 1,024MB Streamlit Cap</span>
+        </div>
+
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cold Start Latency</span>
+          <div class="text-3xl font-black text-emerald-400 mt-2">2.22 s</div>
+          <p class="text-xs text-emerald-400 mt-1 font-mono">82% faster than Sentence-Transformers</p>
+          <div class="w-full bg-slate-800 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-emerald-400 h-full rounded-full" style="width: 22.2%"></div>
+          </div>
+          <span class="text-[10px] text-slate-500 mt-1 block">Production Target: &lt; 5.0s</span>
+        </div>
+
+        <div class="glass p-5 rounded-2xl border border-brand-border text-center">
+          <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">OOD Refusal Speed</span>
+          <div class="text-3xl font-black text-cyan-400 mt-2">&lt; 25 ms</div>
+          <p class="text-xs text-emerald-400 mt-1 font-mono">0 Tokens / $0.00 API Cost</p>
+          <div class="w-full bg-slate-800 h-2 rounded-full mt-3 overflow-hidden">
+            <div class="bg-cyan-400 h-full rounded-full" style="width: 15%"></div>
+          </div>
+          <span class="text-[10px] text-slate-500 mt-1 block">99.4% faster than Naive LLM Call (2.8s)</span>
+        </div>
+      </div>
+
+      <!-- Full Telemetry Table -->
+      <div class="glass rounded-2xl overflow-hidden border border-brand-border shadow-2xl">
         <table class="w-full text-left text-xs sm:text-sm">
-          <thead class="bg-slate-900/80 border-b border-brand-border text-slate-400 font-semibold uppercase text-[11px]">
+          <thead class="bg-slate-900/90 border-b border-brand-border text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
             <tr>
-              <th class="p-4">Metric</th>
+              <th class="p-4 sm:px-6">Engineering Benchmark</th>
               <th class="p-4">Measured Value</th>
-              <th class="p-4">Cloud Limit / Target</th>
-              <th class="p-4 text-right">Production Status</th>
+              <th class="p-4">Cloud Limit / Baseline</th>
+              <th class="p-4 text-right sm:pr-6">Status</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-brand-border font-mono text-slate-300">
             <tr class="hover:bg-slate-900/40">
-              <td class="p-4 font-sans font-medium text-white">FastEmbed ONNX Cold Start</td>
+              <td class="p-4 sm:px-6 font-sans font-medium text-white">FastEmbed ONNX Cold Start</td>
               <td class="p-4 text-cyan-400 font-bold">2.22 s</td>
               <td class="p-4 text-slate-400">&lt; 5.0 s</td>
-              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs border border-emerald-500/30">PASS</span></td>
+              <td class="p-4 text-right sm:pr-6"><span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">PASS</span></td>
             </tr>
             <tr class="hover:bg-slate-900/40">
-              <td class="p-4 font-sans font-medium text-white">Peak Process RAM</td>
+              <td class="p-4 sm:px-6 font-sans font-medium text-white">Peak Process RAM (Full Pipeline)</td>
               <td class="p-4 text-emerald-400 font-bold">423.2 MB</td>
               <td class="p-4 text-slate-400">1,024 MB (Streamlit Cap)</td>
-              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs border border-emerald-500/30">41.3% of budget</span></td>
+              <td class="p-4 text-right sm:pr-6"><span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">41.3% Cap</span></td>
             </tr>
             <tr class="hover:bg-slate-900/40">
-              <td class="p-4 font-sans font-medium text-white">Model Memory Delta</td>
+              <td class="p-4 sm:px-6 font-sans font-medium text-white">ONNX Model Memory Delta</td>
               <td class="p-4 text-cyan-400 font-bold">+136.2 MB</td>
               <td class="p-4 text-slate-400">&lt; 250 MB</td>
-              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs border border-emerald-500/30">Lightweight</span></td>
+              <td class="p-4 text-right sm:pr-6"><span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">Ultralight</span></td>
             </tr>
             <tr class="hover:bg-slate-900/40">
-              <td class="p-4 font-sans font-medium text-white">Document Ingestion (4 pages)</td>
+              <td class="p-4 sm:px-6 font-sans font-medium text-white">Document Ingestion (4 pages)</td>
               <td class="p-4 text-cyan-400 font-bold">28.0 ms</td>
               <td class="p-4 text-slate-400">&lt; 500 ms</td>
-              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs border border-emerald-500/30">Instant</span></td>
+              <td class="p-4 text-right sm:pr-6"><span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">Instant</span></td>
             </tr>
             <tr class="hover:bg-slate-900/40">
-              <td class="p-4 font-sans font-medium text-white">Vector Search Latency (top-k)</td>
+              <td class="p-4 sm:px-6 font-sans font-medium text-white">Vector Search Latency (top-k=4)</td>
               <td class="p-4 text-emerald-400 font-bold">16.2 ms</td>
               <td class="p-4 text-slate-400">&lt; 50 ms</td>
-              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs border border-emerald-500/30">Real-time</span></td>
+              <td class="p-4 text-right sm:pr-6"><span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">Real-time</span></td>
             </tr>
             <tr class="hover:bg-slate-900/40">
-              <td class="p-4 font-sans font-medium text-white">Gate Refusal Response Speed</td>
+              <td class="p-4 sm:px-6 font-sans font-medium text-white">Layer 1 Refusal Intercept Speed</td>
               <td class="p-4 text-emerald-400 font-bold">&lt; 25 ms</td>
               <td class="p-4 text-slate-400">&lt; 50 ms</td>
-              <td class="p-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs border border-emerald-500/30">0 Tokens Used</span></td>
+              <td class="p-4 text-right sm:pr-6"><span class="px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold border border-emerald-500/30">0 Tokens</span></td>
             </tr>
           </tbody>
         </table>
       </div>
+
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- SKILLS MATRIX                                                         -->
+  <!-- TABBED PRODUCTION CODE INSPECTOR                                      -->
   <!-- ===================================================================== -->
-  <section id="skills" class="py-20 px-6 border-t border-brand-border">
+  <section id="code" class="py-20 px-6 border-t border-brand-border">
     <div class="max-w-6xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="text-cyan-400 font-bold text-xs tracking-widest uppercase">Verified Source Code</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+            Production Code Inspector
+          </h2>
+        </div>
+        <div class="mt-4 md:mt-0 flex items-center gap-3">
+          <button onclick="copyCurrentCode()" class="text-xs font-bold px-4 py-2 rounded-xl glass hover:bg-slate-800 text-slate-300 hover:text-white transition-all flex items-center gap-1.5 border border-brand-border">
+            <svg id="copy-icon" class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            <span id="copy-text">Copy Snippet</span>
+          </button>
+          <a href="https://github.com/farwanasir2810-collab/ClinicDocs-AI" target="_blank" rel="noopener" class="text-xs font-bold px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all flex items-center gap-1.5">
+            <span>View Full Repository</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Code Inspector Tabs -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button onclick="setCodeSnippet('retriever')" id="code-tab-retriever" class="tab-active px-4 py-2 rounded-xl font-mono text-xs font-bold glass transition-all">
+          src/retriever.py
+        </button>
+        <button onclick="setCodeSnippet('ingest')" id="code-tab-ingest" class="px-4 py-2 rounded-xl font-mono text-xs font-bold glass transition-all text-slate-400">
+          src/ingest.py
+        </button>
+        <button onclick="setCodeSnippet('chain')" id="code-tab-chain" class="px-4 py-2 rounded-xl font-mono text-xs font-bold glass transition-all text-slate-400">
+          src/chain.py
+        </button>
+        <button onclick="setCodeSnippet('test')" id="code-tab-test" class="px-4 py-2 rounded-xl font-mono text-xs font-bold glass transition-all text-slate-400">
+          tests/test_rag.py (10/10 Evals)
+        </button>
+      </div>
+
+      <!-- Code Display Block -->
+      <div class="glass rounded-2xl overflow-hidden border border-brand-border shadow-2xl">
+        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-brand-border flex items-center justify-between text-xs font-mono text-slate-400">
+          <span id="code-filename">src/retriever.py — Layer 1 Refusal Gate & Session In-Memory Eviction</span>
+          <span class="text-emerald-400">Python 3.11</span>
+        </div>
+        <pre class="p-6 font-mono text-xs text-slate-300 overflow-x-auto leading-relaxed max-h-[460px]"><code id="code-content"># Loading code...</code></pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- TECHNICAL SKILLS MATRIX                                               -->
+  <!-- ===================================================================== -->
+  <section id="skills" class="py-20 px-6 border-t border-brand-border bg-slate-950/20">
+    <div class="max-w-6xl mx-auto">
+      
       <div class="text-center mb-12">
-        <span class="text-cyan-400 font-semibold text-xs tracking-wider uppercase">Technical Proficiencies</span>
-        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Skills & Toolchain</h2>
+        <span class="text-cyan-400 font-bold text-xs tracking-widest uppercase">Technical Competencies</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">
+          Skills & Specialized Toolchain
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Grounded in production software engineering, clean code architecture, and modern machine learning
+        </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Generative AI & LLMs -->
-        <div class="glass p-6 rounded-2xl border border-brand-border">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4">
+        
+        <!-- Card 1: GenAI & LLM Architecture -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
-          <h3 class="text-white font-semibold text-base mb-3">GenAI & LLM Architecture</h3>
-          <ul class="text-xs text-slate-300 space-y-2">
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> LangChain (LCEL)</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Conversational Memory RAG</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Query Contextualization</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Prompt Injection Hardening</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Groq (Llama 3.1) & Gemini APIs</li>
+          <h3 class="text-white font-bold text-base mb-3">GenAI & LLM Architecture</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium">
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> LangChain (LCEL) Chains</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Conversational Memory RAG</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Query Contextualization</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Prompt Injection Hardening</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Groq (Llama 3.1) & Gemini APIs</li>
           </ul>
         </div>
 
-        <!-- Embeddings & Vector Stores -->
-        <div class="glass p-6 rounded-2xl border border-brand-border">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+        <!-- Card 2: Vector Search & Embeddings -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
           </div>
-          <h3 class="text-white font-semibold text-base mb-3">Vector Search & Embeddings</h3>
-          <ul class="text-xs text-slate-300 space-y-2">
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> ChromaDB (Ephemeral & Persistent)</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> FastEmbed (ONNX Runtime)</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> BGE-Small Vector Space</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Cosine Distance Calibration</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Sentence-Transformers</li>
+          <h3 class="text-white font-bold text-base mb-3">Vector Search & Embeddings</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> ChromaDB (Ephemeral & Persistent)</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> FastEmbed (ONNX Runtime)</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> BGE-Small Vector Space</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Cosine Distance Calibration</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> HNSW Index Tuning & Top-K</li>
           </ul>
         </div>
 
-        <!-- Machine Learning & Python -->
-        <div class="glass p-6 rounded-2xl border border-brand-border">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4">
+        <!-- Card 3: Machine Learning Core -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
           </div>
-          <h3 class="text-white font-semibold text-base mb-3">Machine Learning Core</h3>
-          <ul class="text-xs text-slate-300 space-y-2">
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Python 3.10+ / 3.11</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Scikit-Learn</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Pandas & NumPy</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> PyPDF Document Extraction</li>
-            <li class="flex items-center gap-1.5"><span class="text-cyan-400">▹</span> Statistical Evaluation & Metrics</li>
+          <h3 class="text-white font-bold text-base mb-3">Machine Learning & Data</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium">
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Python 3.10 / 3.11 Deep Core</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Scikit-Learn Classifiers</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> NumPy & Pandas Pipelines</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> PyPDF Document Normalization</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-400">▹</span> Precision / Recall Calibration</li>
           </ul>
         </div>
 
-        <!-- Cloud & Software Engineering -->
-        <div class="glass p-6 rounded-2xl border border-brand-border">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+        <!-- Card 4: Software Engineering & Cloud -->
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mb-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
           </div>
-          <h3 class="text-white font-semibold text-base mb-3">Software Engineering</h3>
-          <ul class="text-xs text-slate-300 space-y-2">
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Streamlit Web Applications</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Streamlit Community Cloud Deploy</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Pytest Automated Testing</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Git / GitHub Version Control</li>
-            <li class="flex items-center gap-1.5"><span class="text-emerald-400">▹</span> Linux Binary Compatibility (pysqlite3)</li>
+          <h3 class="text-white font-bold text-base mb-3">Software & Production</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-medium">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Streamlit Web Applications</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Streamlit Community Cloud Deploy</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Pytest Automated Test Suites</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Git / GitHub Version Control</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Linux Binary Shims (pysqlite3)</li>
           </ul>
         </div>
+
       </div>
+
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- ABOUT & BACKGROUND                                                    -->
+  <!-- ABOUT FARWA ALI NASIR                                                 -->
   <!-- ===================================================================== -->
-  <section id="about" class="py-20 px-6 border-t border-brand-border bg-slate-950/20">
+  <section id="about" class="py-20 px-6 border-t border-brand-border">
     <div class="max-w-4xl mx-auto">
-      <div class="flex flex-col md:flex-row items-center gap-10">
-        <div class="w-32 h-32 rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-emerald-400 p-1 flex-shrink-0 shadow-xl">
-          <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center text-3xl font-extrabold text-transparent bg-gradient-to-tr from-cyan-400 to-emerald-400 bg-clip-text">
-            FN
+      <div class="glass p-8 sm:p-12 rounded-3xl border border-brand-border shadow-2xl relative overflow-hidden">
+        
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          
+          <!-- Avatar Icon Badge -->
+          <div class="w-28 h-28 rounded-2xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-emerald-400 p-1 flex-shrink-0 shadow-xl shadow-cyan-500/20">
+            <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center text-3xl font-black text-transparent bg-gradient-to-tr from-cyan-400 to-emerald-400 bg-clip-text">
+              FAN
+            </div>
           </div>
-        </div>
-        <div class="space-y-4 text-center md:text-left">
-          <h3 class="text-2xl font-bold text-white">About Me</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            I am a Software Engineering student and Machine Learning Intern focused on solving real-world latency, reliability, and hallucination bottlenecks in modern AI applications.
-          </p>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            I enjoy transforming theoretical ML concepts and toy notebook prototypes into fully tested, production-grade applications that can be deployed under strict cloud constraints (such as 1GB memory caps and ephemeral serverless filesystems).
-          </p>
-          <div class="pt-2 flex flex-wrap gap-4 text-xs font-mono text-slate-400 justify-center md:justify-start">
-            <span class="flex items-center gap-1.5">📍 Pakistan (Remote-ready)</span>
-            <span class="flex items-center gap-1.5">🎓 BS Software Engineering</span>
-            <span class="flex items-center gap-1.5">💼 ML Intern</span>
+
+          <!-- Narrative -->
+          <div class="space-y-4 text-center md:text-left">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">About Farwa Ali Nasir</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              I am a <strong>Software Engineering student</strong> and <strong>Machine Learning Intern</strong> passionate about bridging the chasm between experimental AI notebooks and high-reliability production software.
+            </p>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              My engineering philosophy revolves around rigorous measurement: preventing LLM hallucinations using mathematical similarity gates, optimizing container memory limits with lightweight ONNX runtimes, and building user experiences that provide verified, 1-indexed citations.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-4 text-xs font-mono text-slate-300 justify-center md:justify-start">
+              <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700">📍 Pakistan (Open to Global Remote)</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700">🎓 BS Software Engineering</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700">💼 ML Intern</span>
+            </div>
           </div>
+
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ===================================================================== -->
-  <!-- FOOTER & CONTACT SECTION                                              -->
+  <!-- RECRUITER CONTACT & FOOTER                                            -->
   <!-- ===================================================================== -->
-  <footer id="contact" class="py-16 px-6 border-t border-brand-border text-center">
-    <div class="max-w-xl mx-auto space-y-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-white">Let's Connect & Collaborate</h2>
-      <p class="text-slate-400 text-sm">
-        Currently seeking internship or junior roles in Machine Learning, AI Engineering, or Software Engineering. Let's discuss how I can contribute to your team!
+  <footer id="contact" class="py-20 px-6 border-t border-brand-border bg-brand-darker text-center relative">
+    <div class="max-w-2xl mx-auto space-y-6">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold font-mono">
+        🚀 Ready to Join Your Team
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        Let's Build Something Exceptional Together
+      </h2>
+
+      <p class="text-slate-400 text-sm leading-relaxed">
+        Looking for an AI / ML engineer who builds software with architectural discipline, empirical benchmarking, and zero-hallucination guardrails? I'd love to chat.
       </p>
 
-      <div class="flex items-center justify-center gap-4 pt-2">
-        <a href="https://github.com/farwanasir2810-collab" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl glass hover:bg-slate-800 text-white font-medium text-xs flex items-center gap-2 border border-brand-border transition-all">
+      <!-- Contact Action Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a href="mailto:farwanasir2810@gmail.com" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/25">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>Email Farwa</span>
+        </a>
+
+        <a href="https://github.com/farwanasir2810-collab" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl glass hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 border border-brand-border transition-all">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span>GitHub</span>
+          <span>GitHub Profile</span>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl glass hover:bg-slate-800 text-white font-medium text-xs flex items-center gap-2 border border-brand-border transition-all">
-          <svg class="w-4 h-4 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-all shadow-md">
+
+        <a href="https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-xl bg-cyan-950/60 hover:bg-cyan-900/60 text-cyan-300 font-bold text-xs uppercase tracking-wider flex items-center gap-2 border border-cyan-800 transition-all">
           <span>🩺 Test ClinicDocs AI</span>
         </a>
       </div>
 
-      <p class="text-slate-600 text-xs pt-8">
-        &copy; 2026 Farwa Nasir. Built with precision, performance, and clean engineering.
-      </p>
+      <div class="pt-10 text-xs text-slate-500 font-mono border-t border-slate-900">
+        &copy; 2026 Farwa Ali Nasir. Architected with precision, measured with telemetry, and built for production.
+      </div>
+
     </div>
   </footer>
+
+  <!-- ===================================================================== -->
+  <!-- CLIENT JAVASCRIPT: INTERACTIVE PLAYGROUND & TABS                      -->
+  <!-- ===================================================================== -->
+  <script>
+    // -----------------------------------------------------------------------
+    // Interactive RAG Sandbox Simulations
+    // -----------------------------------------------------------------------
+    const scenarios = {
+      indomain: {
+        query: "What are the clinic operating hours on Friday?",
+        sim: 0.782,
+        gate: "PASSED (s ≥ 0.48)",
+        latency: "0.82 s",
+        tokens: "184 tokens",
+        status: "⚡ Grounded Citation Response",
+        statusClass: "bg-cyan-950 text-cyan-400 border-cyan-800",
+        response: "On Friday, Noor Care Clinic operates in two shifts:<br>• <strong>Morning Shift:</strong> 9:00 AM – 1:00 PM<br>• <strong>Evening Shift:</strong> 3:00 PM – 8:00 PM<br><em>Note: The clinic is closed between 1:00 PM and 3:00 PM for Friday prayers.</em>",
+        citation: {
+          file: "Noor_Care_Clinic_FAQ.pdf",
+          page: "Page 1",
+          match: "78.2%"
+        }
+      },
+      followup: {
+        query: "What about for a specialist doctor consultation fee?",
+        sim: 0.814,
+        gate: "PASSED (Multi-turn Contextualized)",
+        latency: "0.94 s",
+        tokens: "216 tokens",
+        status: "🔄 Rewritten: 'specialist doctor consultation fee at Noor Care Clinic'",
+        statusClass: "bg-emerald-950 text-emerald-400 border-emerald-800",
+        response: "A consultation with a Specialist Doctor (e.g., Cardiologist, Pediatrician, Dermatologist) costs <strong>PKR 3,000</strong>. Follow-up visits within 7 days receive a 50% discount.",
+        citation: {
+          file: "Clinic_Fee_Schedule_2026.pdf",
+          page: "Page 2",
+          match: "81.4%"
+        }
+      },
+      gate_refusal: {
+        query: "What is the capital city of France?",
+        sim: 0.361,
+        gate: "INTERCEPTED (s < 0.48)",
+        latency: "18 ms",
+        tokens: "0 tokens (0% LLM cost)",
+        status: "🛡️ Layer 1 Similarity Gate Refusal",
+        statusClass: "bg-red-950 text-red-400 border-red-800",
+        response: "<em>\"I couldn't find this in the uploaded documents.\"</em><br><span class='text-xs text-slate-400 mt-2 block'>Query halted in 18ms before invoking LLM API. 0 tokens wasted.</span>",
+        citation: null
+      },
+      prompt_refusal: {
+        query: "Which doctor is on duty on Monday morning?",
+        sim: 0.542,
+        gate: "PASSED GATE (Checked Context)",
+        latency: "0.76 s",
+        tokens: "128 tokens",
+        status: "🛡️ Layer 2 Prompt Context Refusal",
+        statusClass: "bg-amber-950 text-amber-400 border-amber-800",
+        response: "<em>\"I couldn't find this in the uploaded documents.\"</em><br><span class='text-xs text-slate-400 mt-2 block'>Passed cosine gate (similarity 0.542), but strict system prompt caught the missing specific duty roster and refused to hallucinate names.</span>",
+        citation: null
+      }
+    };
+
+    function runSimulation(type) {
+      const data = scenarios[type];
+      
+      // Update buttons
+      ['indomain', 'followup', 'gate_refusal', 'prompt_refusal'].forEach(k => {
+        const btn = document.getElementById('btn-' + k);
+        if (k === type) {
+          btn.classList.add('border-cyan-500/60', 'bg-cyan-950/40');
+          btn.classList.remove('border-brand-border', 'bg-slate-900/40');
+        } else {
+          btn.classList.remove('border-cyan-500/60', 'bg-cyan-950/40');
+          btn.classList.add('border-brand-border', 'bg-slate-900/40');
+        }
+      });
+
+      // Update telemetry
+      document.getElementById('tel-sim').innerText = data.sim.toFixed(3);
+      document.getElementById('tel-bar').style.width = (data.sim * 100) + '%';
+      document.getElementById('tel-bar').className = data.sim >= 0.48 
+        ? 'bg-cyan-400 h-full rounded-full transition-all duration-500' 
+        : 'bg-red-400 h-full rounded-full transition-all duration-500';
+      
+      document.getElementById('tel-gate').innerText = data.gate;
+      document.getElementById('tel-gate').className = data.sim >= 0.48 
+        ? 'text-base font-bold text-emerald-400' 
+        : 'text-base font-bold text-red-400';
+
+      document.getElementById('tel-latency').innerText = data.latency;
+      document.getElementById('tel-tokens').innerText = data.tokens;
+
+      // Update chat
+      document.getElementById('chat-query').innerText = data.query;
+      document.getElementById('chat-status').innerHTML = `<span>${data.status}</span>`;
+      document.getElementById('chat-status').className = `inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono border ${data.statusClass}`;
+      document.getElementById('chat-response').innerHTML = data.response;
+
+      const citBox = document.getElementById('chat-citation');
+      if (data.citation) {
+        citBox.style.display = 'flex';
+        citBox.innerHTML = `
+          <span class="flex items-center gap-2">
+            <span>📄</span>
+            <strong class="text-white">${data.citation.file}</strong>
+            <span class="text-emerald-400 font-mono font-bold">— ${data.citation.page}</span>
+          </span>
+          <span class="font-mono text-cyan-400 text-[11px] bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">
+            Match: ${data.citation.match}
+          </span>
+        `;
+      } else {
+        citBox.style.display = 'none';
+      }
+    }
+
+    // -----------------------------------------------------------------------
+    // Architecture Pipeline Interactive Step Swapper
+    // -----------------------------------------------------------------------
+    const archSteps = {
+      1: {
+        title: "Stage 01: Robust Ingestion, Normalization & Scanned PDF Defense",
+        badge: "src/ingest.py",
+        desc: "Ingestion is where subtle bugs typically emerge in naive RAG systems. PyPDF indexes pages as 0-indexed integers (Page 0, Page 1...). In ClinicDocs AI, we explicitly map each page to human-verifiable physical page numbers <code>page_number = page_idx + 1</code>. Furthermore, we compute an SHA-256 byte digest to skip duplicate reprocessing, implement collision-free filename disambiguation, and compute text-density checks to reject scanned/image-only PDFs before they poison the vector space.",
+        metrics: ["Page Offset: 1-indexed (page + 1)", "Deduplication: SHA-256 Digest", "Format Guard: ScannedPDFError Density Check"]
+      },
+      2: {
+        title: "Stage 02: ONNX-Accelerated FastEmbed Embedding Engine",
+        badge: "src/config.py & FastEmbed",
+        desc: "Rather than importing heavy PyTorch libraries that cause container out-of-memory (OOM) crashes on 1GB Streamlit Cloud containers, ClinicDocs AI deploys <code>BAAI/bge-small-en-v1.5</code> running purely on the quantized ONNX runtime. This slashes cold-start latency from 12.4s down to 2.22s, reduces model RAM allocation to just 136MB, and produces 384-dimensional dense vectors with zero native PyTorch dependencies.",
+        metrics: ["Model: BAAI/bge-small-en-v1.5", "Runtime: Quantized ONNX", "Cold-start: 2.22s vs 12.4s baseline"]
+      },
+      3: {
+        title: "Stage 03: Ephemeral In-Memory Vector Store with LRU Cap",
+        badge: "src/retriever.py & ChromaDB",
+        desc: "Multi-tenant privacy requires strict document separation. Persistent disk stores on serverless clouds retain previous users' files. ClinicDocs AI instantiates <code>chromadb.EphemeralClient()</code> with session-scoped collections (<code>session_{session_id}</code>) living strictly in process RAM. An LRU eviction cache caps active collections to 10, evicting the oldest collection on overflow and preventing long-running container memory bloat.",
+        metrics: ["Storage: Ephemeral In-Memory", "Isolation: Session UUID Namespace", "Cap: LRU Max 10 Collections"]
+      },
+      4: {
+        title: "Stage 04: Two-Layer Refusal Gate & LCEL Conversational Rewriter",
+        badge: "src/chain.py & src/retriever.py",
+        desc: "Hallucination prevention occurs in two decoupled phases. <strong>Layer 1 (The Similarity Gate)</strong> checks maximum cosine similarity across retrieved chunks. If $s < 0.48$, the query is halted in &lt;25ms with 0 tokens. If $s \\ge 0.48$, <strong>Layer 2 (LLM Prompt Grounding)</strong> wraps retrieved chunks in <code>&lt;document_context&gt;</code> tags and instructs the LLM to strictly decline ungrounded questions without fabricating claims.",
+        metrics: ["Cosine Threshold: s = 0.48", "Refusal Latency: < 25ms (0 Tokens)", "Multi-turn: Conditional Turn 2+ Rewriter"]
+      }
+    };
+
+    function setArchStep(step) {
+      for (let i = 1; i <= 4; i++) {
+        const tab = document.getElementById('arch-tab-' + i);
+        if (i === step) {
+          tab.classList.add('tab-active');
+        } else {
+          tab.classList.remove('tab-active');
+        }
+      }
+
+      const info = archSteps[step];
+      document.getElementById('arch-content').innerHTML = `
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl sm:text-2xl font-bold text-white">${info.title}</h3>
+          <span class="text-xs font-mono px-3 py-1 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">${info.badge}</span>
+        </div>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 font-sans">${info.desc}</p>
+        <div class="grid sm:grid-cols-3 gap-3 pt-4 border-t border-brand-border">
+          ${info.metrics.map(m => `
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono text-cyan-300 flex items-center gap-2">
+              <span class="text-emerald-400">✓</span>
+              <span>${m}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // Initialize Step 1
+    setArchStep(1);
+
+    // -----------------------------------------------------------------------
+    // Tabbed Code Inspector
+    // -----------------------------------------------------------------------
+    const codeSnippets = {
+      retriever: {
+        file: "src/retriever.py — Layer 1 Refusal Gate & Session In-Memory Eviction",
+        code: `def retrieve_with_gate(
+    vectorstore: Chroma,
+    query: str,
+    k: int = RETRIEVER_K,
+    similarity_threshold: float = SIMILARITY_THRESHOLD,
+) -> tuple[list[Document], float, bool]:
+    \"\"\"Perform vector search with a two-layer cosine similarity gate.
+
+    Returns:
+        tuple[list[Document], float, bool]:
+            - docs: List of retrieved Documents (empty if gate rejected)
+            - max_sim: Maximum similarity score observed (0.0 to 1.0)
+            - passed_gate: True if max_sim >= similarity_threshold, False otherwise
+    \"\"\"
+    results = vectorstore.similarity_search_with_relevance_scores(query, k=k)
+    if not results:
+        return [], 0.0, False
+
+    docs = [doc for doc, _ in results]
+    scores = [score for _, score in results]
+    max_sim = max(scores) if scores else 0.0
+
+    passed_gate = max_sim >= similarity_threshold
+    if not passed_gate:
+        logger.info(
+            "Gate refused query '%s' (max_sim=%.4f < threshold=%.4f)",
+            query, max_sim, similarity_threshold
+        )
+        return [], max_sim, False
+
+    return docs, max_sim, True`
+      },
+      ingest: {
+        file: "src/ingest.py — 1-Indexed Page Mapping & SHA-256 Deduplication",
+        code: `def extract_text_from_pdf(file_bytes: bytes, filename: str) -> list[Document]:
+    \"\"\"Extract text from PDF with strict 1-indexed page citations and density guards.\"\"\"
+    reader = pypdf.PdfReader(io.BytesIO(file_bytes))
+    num_pages = len(reader.pages)
+    
+    if num_pages == 0:
+        raise EmptyDocumentError(f"'{filename}' has 0 pages.")
+    if num_pages > MAX_PAGES:
+        raise PageLimitExceededError(f"Exceeds max allowed {MAX_PAGES} pages.")
+
+    documents: list[Document] = []
+    total_text_chars = 0
+
+    for page_idx, page in enumerate(reader.pages):
+        page_text = page.extract_text() or ""
+        total_text_chars += len(page_text.strip())
+        
+        # Explicit 1-indexed normalization: page_idx 0 -> Page 1
+        page_num = page_idx + 1
+
+        doc = Document(
+            page_content=page_text,
+            metadata={
+                "source": filename,
+                "page": page_num,  # 1-indexed
+                "total_pages": num_pages,
+            }
+        )
+        documents.append(doc)
+
+    # Scanned PDF guard
+    if total_text_chars < 50:
+        raise ScannedPDFError(f"'{filename}' contains no extractable text.")
+
+    return documents`
+      },
+      chain: {
+        file: "src/chain.py — Conditional Query Contextualizer & Injection Defense",
+        code: `def build_rag_chain(llm, retriever_func):
+    \"\"\"Assemble LCEL pipeline with conditional history rewrite and prompt grounding.\"\"\"
+    
+    # Layer 2 Grounding Prompt with XML context isolation
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", 
+         "You are ClinicDocs AI, a clinical policy question-answering assistant.\\n"
+         "Answer ONLY using the provided documents inside <document_context>.\\n"
+         "If the answer cannot be verified from the context, refuse strictly with:\\n"
+         "'I couldn't find this in the uploaded documents.'\\n"
+         "Never fabricate medical treatments, dosages, or unstated policies.\\n\\n"
+         "<document_context>\\n{context}\\n</document_context>"),
+        MessagesPlaceholder(variable_name="chat_history"),
+        ("human", "{question}")
+    ])
+
+    def conditional_rewrite(inputs):
+        history = inputs.get("chat_history", [])
+        # Latency optimization: bypass rewriter on Turn 1
+        if not history:
+            return inputs["question"]
+        return contextualize_q_chain.invoke(inputs)
+
+    chain = (
+        RunnableParallel({
+            "context": lambda x: retriever_func(conditional_rewrite(x)),
+            "question": lambda x: x["question"],
+            "chat_history": lambda x: x.get("chat_history", [])
+        })
+        | prompt
+        | llm
+        | StrOutputParser()
+    )
+    return chain`
+      },
+      test: {
+        file: "tests/test_rag.py — 10-Question Automated Evaluation Benchmark",
+        code: `def test_comprehensive_evaluation_benchmark():
+    \"\"\"Automated offline test verifying 100% precision on in-domain, follow-up, and OOD questions.\"\"\"
+    results = run_rag_eval_benchmark()
+    
+    # Production Assertions
+    assert results["total"] == 10
+    assert results["grounded_accuracy"] == 1.0, "Expected 100% grounded accuracy"
+    assert results["citation_accuracy"] == 1.0, "Expected 100% correct citations"
+    assert results["gate_refusals"] == 1, "Layer 1 Gate must catch distant OOD query"
+    assert results["prompt_refusals"] == 2, "Layer 2 Prompt must refuse ungrounded queries"
+    assert results["avg_latency"] < 1.5, "Average response latency must be under 1.5s"
+    print("✓ All 10/10 Evaluation Benchmark standards passed!")`
+      }
+    };
+
+    let currentSnippetKey = 'retriever';
+
+    function setCodeSnippet(key) {
+      currentSnippetKey = key;
+      ['retriever', 'ingest', 'chain', 'test'].forEach(k => {
+        const tab = document.getElementById('code-tab-' + k);
+        if (k === key) {
+          tab.classList.add('tab-active');
+          tab.classList.remove('text-slate-400');
+        } else {
+          tab.classList.remove('tab-active');
+          tab.classList.add('text-slate-400');
+        }
+      });
+
+      const snip = codeSnippets[key];
+      document.getElementById('code-filename').innerText = snip.file;
+      document.getElementById('code-content').innerText = snip.code;
+    }
+
+    function copyCurrentCode() {
+      const code = codeSnippets[currentSnippetKey].code;
+      navigator.clipboard.writeText(code).then(() => {
+        document.getElementById('copy-text').innerText = 'Copied!';
+        setTimeout(() => {
+          document.getElementById('copy-text').innerText = 'Copy Snippet';
+        }, 2000);
+      });
+    }
+
+    // Initialize code tab
+    setCodeSnippet('retriever');
+  </script>
 
 </body>
 </html>

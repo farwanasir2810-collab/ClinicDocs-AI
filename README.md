@@ -288,3 +288,14 @@ ClinicDocs AI is strictly an informational document search tool designed for adm
 
 ## 📄 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 👩‍💻 Author & Engineering Profile
+**Farwa Ali Nasir**  
+Software Engineering Student & Machine Learning Intern  
+- **Interactive Portfolio & Case Study**: [https://farwanasir2810-collab.github.io/ClinicDocs-AI/](https://farwanasir2810-collab.github.io/ClinicDocs-AI/)  
+- **GitHub Profile**: [@farwanasir2810-collab](https://github.com/farwanasir2810-collab)  
+- **Live Streamlit Cloud Demo**: [ClinicDocs AI Web App](https://clinicdocs-ai-3bhrnzpz6hdwzzkbfuswdj.streamlit.app/)  
+- **Direct Contact**: [farwanasir2810@gmail.com](mailto:farwanasir2810@gmail.com)
+
