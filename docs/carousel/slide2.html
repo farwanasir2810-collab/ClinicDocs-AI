@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Slide 2 - Live Working Interface</title>
+  <title>Slide 2 - The Engineering Problem</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     .mono { font-family: 'JetBrains Mono', monospace; }
@@ -12,104 +12,103 @@
 </head>
 <body class="bg-[#07090E] text-slate-100 m-0 p-0 flex items-center justify-center w-[1200px] h-[1200px] overflow-hidden">
   
-  <div class="w-[1100px] h-[1100px] bg-[#0D131F] rounded-3xl border border-slate-800 p-16 flex flex-col justify-between shadow-2xl relative">
+  <div class="w-[1100px] h-[1100px] bg-[#0D131F] rounded-3xl border border-slate-800 p-14 flex flex-col justify-between shadow-2xl relative">
     
     <!-- Top Bar -->
-    <div class="flex items-center justify-between border-b border-slate-800/80 pb-6">
+    <div class="flex items-center justify-between border-b border-slate-800/80 pb-5">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg">
-          💬
+          ⚠️
         </div>
         <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block font-bold">Verified Production UI</span>
-          <span class="text-xl font-bold text-white tracking-tight">Live In-App Responses &amp; Citations</span>
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block font-bold">The Engineering Problem</span>
+          <span class="text-xl font-bold text-white tracking-tight">Why 90% of RAG Demos Fail in Production</span>
         </div>
       </div>
       <div class="px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300">
-        Slide 2 of 4
+        Slide 2 of 6
       </div>
     </div>
 
-    <!-- Main Content: Live Working Dialogue Mockups -->
-    <div class="space-y-6 my-auto">
+    <!-- Main Content: 3 Critical Failure Modes & Solutions -->
+    <div class="space-y-4 my-auto">
       
-      <!-- Example 1: In-Domain Verified Answer with Citation -->
-      <div class="bg-slate-900/80 border border-slate-700/80 rounded-2xl p-6 space-y-4">
-        
-        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">Example 1: Grounded Answer with 1-Indexed Citation</span>
+      <p class="text-slate-300 text-sm leading-relaxed">
+        Tutorial notebooks work with 5-line toy scripts, but real enterprise deployments hit severe memory, privacy, and hallucination constraints. Here is how we engineered around them:
+      </p>
+
+      <!-- Row 1: Memory Bloat & OOM -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-2xl space-y-2">
+          <div class="flex items-center gap-2 text-red-400 font-bold text-sm">
+            <span class="w-5 h-5 rounded bg-red-500/20 flex items-center justify-center text-xs">✕</span>
+            <span>1. Heavy PyTorch OOM Container Crashes</span>
           </div>
-          <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">⏱️ Latency: 0.82s</span>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Standard <code>sentence-transformers</code> imports heavy PyTorch wheels (~800MB), instantly exceeding 1GB serverless RAM caps and crashing containers.
+          </p>
         </div>
-
-        <div class="space-y-3">
-          <div class="flex items-start gap-3">
-            <span class="w-6 h-6 rounded bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono font-bold shrink-0">Q</span>
-            <p class="text-sm font-semibold text-white">What are the clinic operating hours on Friday?</p>
+        <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl space-y-2">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+            <span class="w-5 h-5 rounded bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
+            <span>FastEmbed ONNX (70% Less Memory)</span>
           </div>
-
-          <div class="flex items-start gap-3 pl-9">
-            <div class="bg-[#07090E] border border-slate-800 rounded-xl p-4 text-xs text-slate-200 leading-relaxed w-full space-y-2">
-              <p>
-                On Friday, Noor Care Clinic operates in two shifts:<br>
-                • <strong>Morning Shift:</strong> 9:00 AM – 1:00 PM<br>
-                • <strong>Evening Shift:</strong> 3:00 PM – 8:00 PM<br>
-                <em>The clinic is closed between 1:00 PM and 3:00 PM for Friday prayers.</em>
-              </p>
-              <!-- Physical Citation Pill -->
-              <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono">
-                <span class="text-slate-300 flex items-center gap-1.5">
-                  <span>📄</span>
-                  <strong>Noor_Care_Clinic_FAQ.pdf</strong>
-                  <span class="text-emerald-400 font-bold">— Page 1</span>
-                </span>
-                <span class="text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800">Cosine Similarity: 78.2%</span>
-              </div>
-            </div>
-          </div>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Replaced PyTorch with pure quantized ONNX runtime (<code>bge-small-en-v1.5</code>). Cold-starts in 2.2s and peaks at just <strong>423MB RAM</strong> under full load.
+          </p>
         </div>
-
       </div>
 
-      <!-- Example 2: Layer 1 Cosine Refusal Gate (Out-of-Domain Intercept) -->
-      <div class="bg-red-950/10 border border-red-500/20 rounded-2xl p-6 space-y-4">
-        
-        <div class="flex items-center justify-between border-b border-red-900/40 pb-3">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-            <span class="text-xs font-mono text-red-400 font-bold uppercase tracking-wider">Example 2: Layer 1 Refusal Gate (Out-of-Domain Query)</span>
+      <!-- Row 2: Data Leakage -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-2xl space-y-2">
+          <div class="flex items-center gap-2 text-red-400 font-bold text-sm">
+            <span class="w-5 h-5 rounded bg-red-500/20 flex items-center justify-center text-xs">✕</span>
+            <span>2. Shared-Disk Data Contamination</span>
           </div>
-          <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-red-950 text-red-400 border border-red-800 font-bold">⚡ Intercepted in 18ms (0 Tokens Billed)</span>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Persistent Chroma/SQLite files stored on disk retain previous users' confidential medical files, causing multi-tenant data leakage.
+          </p>
         </div>
-
-        <div class="space-y-3">
-          <div class="flex items-start gap-3">
-            <span class="w-6 h-6 rounded bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono font-bold shrink-0">Q</span>
-            <p class="text-sm font-semibold text-white">What is the capital city of France?</p>
+        <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl space-y-2">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+            <span class="w-5 h-5 rounded bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
+            <span>In-Memory Isolation with LRU Eviction</span>
           </div>
-
-          <div class="flex items-start gap-3 pl-9">
-            <div class="bg-[#07090E] border border-red-900/40 rounded-xl p-4 text-xs text-slate-300 leading-relaxed w-full">
-              <p class="font-medium text-red-200">
-                <em>"I couldn't find this in the uploaded documents."</em>
-              </p>
-              <p class="text-[11px] text-slate-400 mt-2 font-mono border-t border-slate-800/80 pt-2">
-                🛡️ Max cosine similarity observed: <strong>0.361 &lt; 0.48 threshold</strong>. Query halted at vector level before invoking LLM API. <strong>$0.00 spent.</strong>
-              </p>
-            </div>
-          </div>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Vector collections live exclusively in process RAM (<code>chromadb.EphemeralClient</code>) tied to session UUIDs with an LRU cap (max 10) to prevent memory leaks.
+          </p>
         </div>
+      </div>
 
+      <!-- Row 3: Hallucinations & Cost Waste -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-2xl space-y-2">
+          <div class="flex items-center gap-2 text-red-400 font-bold text-sm">
+            <span class="w-5 h-5 rounded bg-red-500/20 flex items-center justify-center text-xs">✕</span>
+            <span>3. Hallucinations & Wasted API Bills</span>
+          </div>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Irrelevant queries trigger full LLM completions, wasting API budget while fabricating answers to off-topic or unanswerable medical questions.
+          </p>
+        </div>
+        <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl space-y-2">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
+            <span class="w-5 h-5 rounded bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
+            <span>Two-Layer Refusal Gate (<25ms, 0 Tokens)</span>
+          </div>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Cosine similarity threshold gate ($s &lt; 0.48$) intercepts unrelated queries in 18ms with 0 LLM tokens, backed by strict XML prompt grounding.
+          </p>
+        </div>
       </div>
 
     </div>
 
     <!-- Bottom Footer -->
-    <div class="flex items-center justify-between border-t border-slate-800/80 pt-6 text-xs text-slate-400 font-mono">
-      <span>Zero Hallucinations • Zero Token Waste on Out-of-Domain Queries</span>
-      <span class="text-cyan-400">Swipe right for source code ➔</span>
+    <div class="flex items-center justify-between border-t border-slate-800/80 pt-5 text-xs text-slate-400 font-mono">
+      <span>Architectural Trade-offs • Resource Budgeting</span>
+      <span class="text-cyan-400 font-bold">Swipe right for the system pipeline ➔</span>
     </div>
 
   </div>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Slide 1 - ClinicDocs AI</title>
+  <title>Slide 1 - Product Showcase</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     .mono { font-family: 'JetBrains Mono', monospace; }
@@ -12,93 +12,116 @@
 </head>
 <body class="bg-[#07090E] text-slate-100 m-0 p-0 flex items-center justify-center w-[1200px] h-[1200px] overflow-hidden">
   
-  <div class="w-[1100px] h-[1100px] bg-[#0D131F] rounded-3xl border border-slate-800 p-16 flex flex-col justify-between shadow-2xl relative">
+  <div class="w-[1100px] h-[1100px] bg-[#0D131F] rounded-3xl border border-slate-800 p-14 flex flex-col justify-between shadow-2xl relative">
     
     <!-- Top Bar -->
-    <div class="flex items-center justify-between border-b border-slate-800/80 pb-6">
+    <div class="flex items-center justify-between border-b border-slate-800/80 pb-5">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg">
-          🩺
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-0.5 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+          <div class="w-full h-full bg-[#0D131F] rounded-[10px] flex items-center justify-center text-sm font-black text-cyan-400">
+            🩺
+          </div>
         </div>
         <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block font-bold">Engineering Case Study</span>
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block font-bold">Production AI Case Study</span>
           <span class="text-xl font-bold text-white tracking-tight">ClinicDocs AI</span>
         </div>
       </div>
       <div class="px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300">
-        Slide 1 of 4
+        Slide 1 of 6
       </div>
     </div>
 
     <!-- Main Title & Hook -->
-    <div class="space-y-6 my-auto">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-mono font-semibold">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span>PRODUCTION-GRADE CONVERSATIONAL RAG</span>
+    <div class="space-y-5 my-auto">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-cyan-300 text-xs font-mono font-semibold">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>FLAGSHIP OPEN-SOURCE CONVERSATIONAL RAG</span>
       </div>
 
-      <h1 class="text-5xl font-black text-white tracking-tight leading-[1.15]">
-        Why Toy Tutorial RAG Fails in Production &amp; How We Engineered a Solution
+      <h1 class="text-5xl font-black text-white tracking-tight leading-[1.12]">
+        Chat with Clinical Policies with <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">Zero Hallucinations</span> &amp; Exact Page Citations
       </h1>
 
-      <p class="text-slate-300 text-lg leading-relaxed max-w-3xl">
-        Most generative AI tutorials connect a toy vector store to an LLM in a Jupyter notebook. When deployed to real cloud infrastructure with real medical policies, three fatal bottlenecks emerge:
+      <p class="text-slate-300 text-base leading-relaxed max-w-3xl">
+        A production-grade, privacy-first Conversational RAG web application built to turn static clinic policies, operating hours, and patient guidelines into grounded answers with 1-indexed citations and two-layer refusal guardrails.
       </p>
 
-      <!-- Problem vs Solution 2-Column Grid -->
-      <div class="grid grid-cols-2 gap-6 pt-4">
+      <!-- Realistic Live App Interface Mockup Card -->
+      <div class="bg-slate-950/90 border border-cyan-500/30 rounded-2xl p-6 shadow-xl relative overflow-hidden">
         
-        <!-- The Problem -->
-        <div class="bg-red-950/20 border border-red-500/30 rounded-2xl p-6 space-y-3">
-          <div class="flex items-center gap-2 text-red-400 font-bold text-base">
-            <span class="w-6 h-6 rounded-lg bg-red-500/20 flex items-center justify-center text-xs">✕</span>
-            <span>The Production Bottlenecks</span>
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="text-xs font-mono text-slate-400 ml-2">clinicdocs-ai.streamlit.app — Live Session Active</span>
           </div>
-          <ul class="text-slate-300 text-sm space-y-2.5">
-            <li class="flex items-start gap-2">
-              <span class="text-red-400">•</span>
-              <span><strong>OOM Crashes:</strong> 800MB PyTorch wheels exceed 1GB serverless caps, crashing container runtimes.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-400">•</span>
-              <span><strong>Data Leaks:</strong> Shared persistent disk stores expose documents across concurrent sessions.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-400">•</span>
-              <span><strong>Hallucinations:</strong> Irrelevant queries trigger expensive LLM calls that fabricate false policy answers.</span>
-            </li>
-          </ul>
+          <span class="text-[11px] font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-bold">
+            10/10 EVALS PASSED
+          </span>
         </div>
 
-        <!-- The Solution -->
-        <div class="bg-emerald-950/20 border border-emerald-500/30 rounded-2xl p-6 space-y-3">
-          <div class="flex items-center gap-2 text-emerald-400 font-bold text-base">
-            <span class="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
-            <span>The ClinicDocs AI Architecture</span>
+        <div class="space-y-3 font-mono text-xs">
+          <!-- Question -->
+          <div class="flex items-start gap-2.5">
+            <span class="text-cyan-400 font-bold">User:</span>
+            <span class="text-white">What are the clinic operating hours on Friday?</span>
           </div>
-          <ul class="text-slate-300 text-sm space-y-2.5">
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400">•</span>
-              <span><strong>FastEmbed ONNX:</strong> Pure quantized ONNX runtime slashes RAM by 70% (423MB peak process).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400">•</span>
-              <span><strong>In-Memory Isolation:</strong> Ephemeral session UUID collections in RAM with LRU eviction cap (max 10).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-400">•</span>
-              <span><strong>Two-Layer Refusal:</strong> Cosine similarity gate intercepts off-topic queries in &lt;25ms with 0 tokens billed.</span>
-            </li>
-          </ul>
+
+          <!-- Answer Box -->
+          <div class="bg-[#0D131F] border border-slate-800 rounded-xl p-4 text-slate-200 font-sans text-xs leading-relaxed space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-cyan-300 font-bold font-mono">🩺 ClinicDocs AI:</span>
+              <span class="text-[10px] font-mono text-slate-400">⏱️ Latency: 0.82s</span>
+            </div>
+            <p>
+              On Friday, Noor Care Clinic operates in two shifts:<br>
+              • <strong>Morning Shift:</strong> 9:00 AM – 1:00 PM<br>
+              • <strong>Evening Shift:</strong> 3:00 PM – 8:00 PM<br>
+              <em>(Closed between 1:00 PM and 3:00 PM for Friday prayers).</em>
+            </p>
+            <!-- Verified Citation -->
+            <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between font-mono text-[11px]">
+              <span class="text-slate-300 flex items-center gap-1.5">
+                <span>📄</span>
+                <strong>Noor_Care_Clinic_FAQ.pdf</strong>
+                <span class="text-emerald-400 font-bold">— Page 1</span>
+              </span>
+              <span class="text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">Match: 78.2%</span>
+            </div>
+          </div>
         </div>
 
       </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="grid grid-cols-4 gap-3 pt-2">
+        <div class="bg-slate-900/60 border border-slate-800 p-3 rounded-xl text-center">
+          <div class="text-xl font-bold text-cyan-400 font-mono">70%</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-0.5">RAM Savings (ONNX)</div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800 p-3 rounded-xl text-center">
+          <div class="text-xl font-bold text-emerald-400 font-mono">&lt; 25 ms</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-0.5">Refusal Gate Speed</div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800 p-3 rounded-xl text-center">
+          <div class="text-xl font-bold text-cyan-400 font-mono">0 Tokens</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-0.5">Wasted on OOD Queries</div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800 p-3 rounded-xl text-center">
+          <div class="text-xl font-bold text-emerald-400 font-mono">100%</div>
+          <div class="text-[10px] text-slate-400 font-mono mt-0.5">Grounded Accuracy</div>
+        </div>
+      </div>
+
     </div>
 
     <!-- Bottom Footer -->
-    <div class="flex items-center justify-between border-t border-slate-800/80 pt-6 text-xs text-slate-400 font-mono">
+    <div class="flex items-center justify-between border-t border-slate-800/80 pt-5 text-xs text-slate-400 font-mono">
       <span>Architected &amp; Built by <strong>Farwa Ali Nasir</strong></span>
-      <span class="text-cyan-400">Swipe right to inspect the architecture ➔</span>
+      <span class="text-cyan-400 font-bold">Swipe right to inspect the engineering ➔</span>
     </div>
 
   </div>

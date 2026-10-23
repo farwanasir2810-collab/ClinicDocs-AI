@@ -8,7 +8,7 @@ if not os.path.exists(chrome_path):
 
 base_dir = r"C:\Users\Hp\OneDrive\Desktop\RAG ChatBot\docs\carousel"
 
-slides = ["slide1", "slide2", "slide3", "slide4"]
+slides = ["slide1", "slide2", "slide3", "slide4", "slide5", "slide6"]
 rendered_images = []
 
 for s in slides:
@@ -30,15 +30,19 @@ for s in slides:
     res = subprocess.run(cmd, capture_output=True, text=True)
     
     if os.path.exists(png_file):
-        # Convert to high-quality JPG
         img = Image.open(png_file).convert("RGB")
         img.save(jpg_file, "JPEG", quality=95)
         rendered_images.append(img)
         print(f"Successfully saved {jpg_file}")
+        # Clean up temp png
+        try:
+            os.remove(png_file)
+        except Exception:
+            pass
     else:
         print(f"Failed to render {s}: {res.stderr}")
 
-if len(rendered_images) == 4:
+if len(rendered_images) == len(slides):
     pdf_path = os.path.join(base_dir, "ClinicDocs_AI_CaseStudy.pdf")
     rendered_images[0].save(
         pdf_path,
@@ -46,4 +50,4 @@ if len(rendered_images) == 4:
         append_images=rendered_images[1:],
         quality=95
     )
-    print(f"Successfully generated 4-slide PDF: {pdf_path}")
+    print(f"Successfully generated 6-slide PDF: {pdf_path}")
