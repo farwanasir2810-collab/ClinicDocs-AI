@@ -1,90 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Slide 5 - Production Code</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
-  </style>
-</head>
-<body class="bg-[#07090E] text-slate-100 m-0 p-0 flex items-center justify-center w-[1200px] h-[1200px] overflow-hidden">
-  
-  <div class="w-[1100px] h-[1100px] bg-[#0D131F] rounded-3xl border border-slate-800 p-14 flex flex-col justify-between shadow-2xl relative">
-    
-    <!-- Top Bar -->
-    <div class="flex items-center justify-between border-b border-slate-800/80 pb-5">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg">
-          💻
-        </div>
+<html>
+<head><style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 50px 60px;
+    width: 1200px;
+    height: 1200px;
+    background-color: #070B14;
+    background-image: 
+      radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
+      radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.18) 0%, transparent 45%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .mono { font-family: 'Consolas', 'Courier New', monospace; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: rgba(6, 182, 212, 0.15);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    color: #38BDF8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .slide-counter {
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: #0F172A;
+    border: 1px solid #334155;
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .card-highlight {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 11, 20, 0.9));
+    border: 1.5px solid rgba(6, 182, 212, 0.4);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
+  }
+  h1 {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 12px 0;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #38BDF8, #2DD4BF, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p.subtitle {
+    font-size: 18px;
+    line-height: 1.45;
+    color: #CBD5E1;
+    margin: 0 0 16px 0;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #1E293B;
+    padding-top: 18px;
+    font-size: 14px;
+    color: #94A3B8;
+  }
+</style></head>
+<body>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 44px; height: 44px; background: rgba(6, 182, 212, 0.2); border: 1px solid #06B6D4; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;">📊</div>
+      <div>
+        <div style="font-size: 12px; color: #38BDF8; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">Empirical Telemetry</div>
+        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">Measured Benchmarks &amp; Author Profile</div>
+      </div>
+    </div>
+    <div class="slide-counter mono">Slide 05 / 05</div>
+  </div>
+
+  <div style="margin: auto 0;">
+    <div class="badge">Reproducible Benchmarks</div>
+    <h1>Production Telemetry vs <span class="gradient-text">Naive RAG Baselines</span></h1>
+    <p class="subtitle">Measured live on single CPU core constraints using scripts/measure_benchmarks.py:</p>
+
+    <!-- Telemetry Table -->
+    <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 20px;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;" class="mono">
+        <thead>
+          <tr style="background: #0F172A; border-bottom: 1px solid #334155; color: #94A3B8; text-transform: uppercase; font-size: 12px;">
+            <th style="padding: 14px 18px;">Engineering Metric</th>
+            <th style="padding: 14px 18px; color: #38BDF8;">ClinicDocs AI</th>
+            <th style="padding: 14px 18px;">Naive PyTorch RAG</th>
+            <th style="padding: 14px 18px; text-align: right; color: #34D399;">Impact</th>
+          </tr>
+        </thead>
+        <tbody style="color: #E2E8F0;">
+          <tr style="border-bottom: 1px solid #1E293B;">
+            <td style="padding: 12px 18px; font-family: sans-serif; font-weight: 600;">Embedding Model RAM</td>
+            <td style="padding: 12px 18px; color: #38BDF8; font-weight: bold;">136.2 MB (ONNX)</td>
+            <td style="padding: 12px 18px; color: #94A3B8;">850+ MB (PyTorch)</td>
+            <td style="padding: 12px 18px; text-align: right; color: #34D399; font-weight: bold;">70% Reduction</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #1E293B;">
+            <td style="padding: 12px 18px; font-family: sans-serif; font-weight: 600;">Peak Process Memory</td>
+            <td style="padding: 12px 18px; color: #34D399; font-weight: bold;">423.2 MB</td>
+            <td style="padding: 12px 18px; color: #94A3B8;">1,420 MB (OOM Risk)</td>
+            <td style="padding: 12px 18px; text-align: right; color: #34D399; font-weight: bold;">Fits 1GB Cap</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #1E293B;">
+            <td style="padding: 12px 18px; font-family: sans-serif; font-weight: 600;">Out-of-Domain Refusal</td>
+            <td style="padding: 12px 18px; color: #38BDF8; font-weight: bold;">&lt; 25 ms</td>
+            <td style="padding: 12px 18px; color: #94A3B8;">2,850 ms (Full LLM)</td>
+            <td style="padding: 12px 18px; text-align: right; color: #34D399; font-weight: bold;">99.4% Faster</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #1E293B;">
+            <td style="padding: 12px 18px; font-family: sans-serif; font-weight: 600;">Cost on Off-Topic Queries</td>
+            <td style="padding: 12px 18px; color: #34D399; font-weight: bold;">$0.00 (0 Tokens)</td>
+            <td style="padding: 12px 18px; color: #94A3B8;">Standard API Billing</td>
+            <td style="padding: 12px 18px; text-align: right; color: #34D399; font-weight: bold;">Zero Token Cost</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 18px; font-family: sans-serif; font-weight: 600;">Grounded Benchmark Accuracy</td>
+            <td style="padding: 12px 18px; color: #34D399; font-weight: bold;">10/10 (100%)</td>
+            <td style="padding: 12px 18px; color: #94A3B8;">Frequent Hallucinations</td>
+            <td style="padding: 12px 18px; text-align: right; color: #34D399; font-weight: bold;">Production Grade</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Author & Action Card -->
+    <div class="card-highlight" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #06B6D4, #10B981); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 20px; color: #0A0F1A;">FAN</div>
         <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block font-bold">Production Code</span>
-          <span class="text-xl font-bold text-white tracking-tight">The Core Engineering Implementation</span>
+          <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">Farwa Ali Nasir</div>
+          <div class="mono" style="font-size: 13px; color: #38BDF8;">AI &amp; Machine Learning Software Engineer</div>
+          <div style="font-size: 12px; color: #94A3B8; margin-top: 2px;">Open to Full-Time &amp; Associate AI/ML &amp; SWE Roles</div>
         </div>
       </div>
-      <div class="px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300">
-        Slide 5 of 6
+      <div style="text-align: right;" class="mono">
+        <div style="color: #34D399; font-weight: bold; font-size: 13px;">Live Demo &amp; Code in Comments 👇</div>
+        <div style="color: #64748B; font-size: 12px;">github.com/farwanasir2810-collab</div>
       </div>
-    </div>
-
-    <!-- Main Content: Real Code Windows -->
-    <div class="space-y-4 my-auto">
-      
-      <!-- Snippet 1: The Cosine Refusal Gate (src/retriever.py) -->
-      <div class="bg-slate-900 rounded-2xl border border-slate-700/80 overflow-hidden shadow-lg">
-        <div class="bg-slate-950 px-4 py-2 border-b border-slate-800 flex items-center justify-between text-xs font-mono">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-            <span class="text-slate-400 ml-2">src/retriever.py — Layer 1 Vector Refusal Gate</span>
-          </div>
-          <span class="text-cyan-400">Python 3.11</span>
-        </div>
-        <pre class="p-4 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto"><span class="text-purple-400">def</span> <span class="text-blue-400">retrieve_with_gate</span>(
-    vectorstore: Chroma, query: <span class="text-emerald-400">str</span>, k: <span class="text-emerald-400">int</span> = 4, threshold: <span class="text-emerald-400">float</span> = 0.48
-) -> <span class="text-emerald-400">tuple</span>[<span class="text-emerald-400">list</span>[Document], <span class="text-emerald-400">float</span>, <span class="text-emerald-400">bool</span>]:
-    <span class="text-slate-500"># 1. Compute cosine similarity across top-k chunks</span>
-    results = vectorstore.similarity_search_with_relevance_scores(query, k=k)
-    max_sim = <span class="text-blue-400">max</span>([score <span class="text-purple-400">for</span> _, score <span class="text-purple-400">in</span> results]) <span class="text-purple-400">if</span> results <span class="text-purple-400">else</span> 0.0
-
-    <span class="text-slate-500"># 2. Intercept OOD queries at vector stage in &lt;25ms (0 tokens billed)</span>
-    <span class="text-purple-400">if</span> max_sim &lt; threshold:
-        logger.info(<span class="text-amber-300">"Gate refused query '%s' (sim=%.3f &lt; %.2f)"</span>, query, max_sim, threshold)
-        <span class="text-purple-400">return</span> [], max_sim, <span class="text-red-400">False</span>
-
-    <span class="text-purple-400">return</span> [doc <span class="text-purple-400">for</span> doc, _ <span class="text-purple-400">in</span> results], max_sim, <span class="text-emerald-400">True</span></pre>
-      </div>
-
-      <!-- Snippet 2: Prompt Grounding (src/chain.py) -->
-      <div class="bg-slate-900 rounded-2xl border border-slate-700/80 overflow-hidden shadow-lg">
-        <div class="bg-slate-950 px-4 py-2 border-b border-slate-800 flex items-center justify-between text-xs font-mono">
-          <span class="text-slate-400">src/chain.py — XML Context Grounding &amp; Injection Hardening</span>
-          <span class="text-emerald-400">LangChain LCEL</span>
-        </div>
-        <pre class="p-4 font-mono text-xs text-slate-300 leading-relaxed overflow-x-auto">prompt = ChatPromptTemplate.from_messages([
-    (<span class="text-amber-300">"system"</span>, 
-     <span class="text-amber-300">"You are ClinicDocs AI. Answer ONLY using &lt;document_context&gt;.\\n"</span>
-     <span class="text-amber-300">"If ungrounded, refuse with: 'I couldn't find this in the uploaded documents.'\\n"</span>
-     <span class="text-amber-300">"Never fabricate medical treatments or unstated clinic policies.\\n\\n"</span>
-     <span class="text-amber-300">"&lt;document_context&gt;\\n{context}\\n&lt;/document_context&gt;"</span>),
-    MessagesPlaceholder(variable_name=<span class="text-amber-300">"chat_history"</span>),
-    (<span class="text-amber-300">"human"</span>, <span class="text-amber-300">"{question}"</span>)
-])</pre>
-      </div>
-
-    </div>
-
-    <!-- Bottom Footer -->
-    <div class="flex items-center justify-between border-t border-slate-800/80 pt-5 text-xs text-slate-400 font-mono">
-      <span>100% Tested with Pytest • Full Source Available on GitHub</span>
-      <span class="text-cyan-400 font-bold">Swipe right for measured benchmarks &amp; results ➔</span>
     </div>
 
   </div>
 
+  <div class="footer">
+    <div>Architected for Enterprise Reliability • Fully Open Source</div>
+    <div style="color: #38BDF8; font-weight: 700;">Test the Live App in the Comments! 🚀</div>
+  </div>
 </body>
 </html>

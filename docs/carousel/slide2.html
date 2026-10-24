@@ -1,117 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Slide 2 - The Engineering Problem</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
-  </style>
-</head>
-<body class="bg-[#07090E] text-slate-100 m-0 p-0 flex items-center justify-center w-[1200px] h-[1200px] overflow-hidden">
-  
-  <div class="w-[1100px] h-[1100px] bg-[#0D131F] rounded-3xl border border-slate-800 p-14 flex flex-col justify-between shadow-2xl relative">
-    
-    <!-- Top Bar -->
-    <div class="flex items-center justify-between border-b border-slate-800/80 pb-5">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-lg">
-          ⚠️
-        </div>
-        <div>
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest block font-bold">The Engineering Problem</span>
-          <span class="text-xl font-bold text-white tracking-tight">Why 90% of RAG Demos Fail in Production</span>
-        </div>
-      </div>
-      <div class="px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300">
-        Slide 2 of 6
+<html>
+<head><style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 50px 60px;
+    width: 1200px;
+    height: 1200px;
+    background-color: #070B14;
+    background-image: 
+      radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
+      radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.18) 0%, transparent 45%),
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .mono { font-family: 'Consolas', 'Courier New', monospace; }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: rgba(6, 182, 212, 0.15);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    color: #38BDF8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .slide-counter {
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: #0F172A;
+    border: 1px solid #334155;
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .card-highlight {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 11, 20, 0.9));
+    border: 1.5px solid rgba(6, 182, 212, 0.4);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
+  }
+  h1 {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 12px 0;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #38BDF8, #2DD4BF, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p.subtitle {
+    font-size: 18px;
+    line-height: 1.45;
+    color: #CBD5E1;
+    margin: 0 0 16px 0;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #1E293B;
+    padding-top: 18px;
+    font-size: 14px;
+    color: #94A3B8;
+  }
+</style></head>
+<body>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 44px; height: 44px; background: rgba(239, 68, 68, 0.2); border: 1px solid #EF4444; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;">⚠️</div>
+      <div>
+        <div style="font-size: 12px; color: #F87171; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">The Engineering Challenge</div>
+        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">Why 90% of RAG Demos Fail in Production</div>
       </div>
     </div>
-
-    <!-- Main Content: 3 Critical Failure Modes & Solutions -->
-    <div class="space-y-4 my-auto">
-      
-      <p class="text-slate-300 text-sm leading-relaxed">
-        Tutorial notebooks work with 5-line toy scripts, but real enterprise deployments hit severe memory, privacy, and hallucination constraints. Here is how we engineered around them:
-      </p>
-
-      <!-- Row 1: Memory Bloat & OOM -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center gap-2 text-red-400 font-bold text-sm">
-            <span class="w-5 h-5 rounded bg-red-500/20 flex items-center justify-center text-xs">✕</span>
-            <span>1. Heavy PyTorch OOM Container Crashes</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Standard <code>sentence-transformers</code> imports heavy PyTorch wheels (~800MB), instantly exceeding 1GB serverless RAM caps and crashing containers.
-          </p>
-        </div>
-        <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
-            <span class="w-5 h-5 rounded bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
-            <span>FastEmbed ONNX (70% Less Memory)</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Replaced PyTorch with pure quantized ONNX runtime (<code>bge-small-en-v1.5</code>). Cold-starts in 2.2s and peaks at just <strong>423MB RAM</strong> under full load.
-          </p>
-        </div>
-      </div>
-
-      <!-- Row 2: Data Leakage -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center gap-2 text-red-400 font-bold text-sm">
-            <span class="w-5 h-5 rounded bg-red-500/20 flex items-center justify-center text-xs">✕</span>
-            <span>2. Shared-Disk Data Contamination</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Persistent Chroma/SQLite files stored on disk retain previous users' confidential medical files, causing multi-tenant data leakage.
-          </p>
-        </div>
-        <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
-            <span class="w-5 h-5 rounded bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
-            <span>In-Memory Isolation with LRU Eviction</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Vector collections live exclusively in process RAM (<code>chromadb.EphemeralClient</code>) tied to session UUIDs with an LRU cap (max 10) to prevent memory leaks.
-          </p>
-        </div>
-      </div>
-
-      <!-- Row 3: Hallucinations & Cost Waste -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-red-950/20 border border-red-500/30 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center gap-2 text-red-400 font-bold text-sm">
-            <span class="w-5 h-5 rounded bg-red-500/20 flex items-center justify-center text-xs">✕</span>
-            <span>3. Hallucinations & Wasted API Bills</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Irrelevant queries trigger full LLM completions, wasting API budget while fabricating answers to off-topic or unanswerable medical questions.
-          </p>
-        </div>
-        <div class="bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl space-y-2">
-          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm">
-            <span class="w-5 h-5 rounded bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
-            <span>Two-Layer Refusal Gate (<25ms, 0 Tokens)</span>
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Cosine similarity threshold gate ($s &lt; 0.48$) intercepts unrelated queries in 18ms with 0 LLM tokens, backed by strict XML prompt grounding.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom Footer -->
-    <div class="flex items-center justify-between border-t border-slate-800/80 pt-5 text-xs text-slate-400 font-mono">
-      <span>Architectural Trade-offs • Resource Budgeting</span>
-      <span class="text-cyan-400 font-bold">Swipe right for the system pipeline ➔</span>
-    </div>
-
+    <div class="slide-counter mono">Slide 02 / 05</div>
   </div>
 
+  <div style="margin: auto 0;">
+    <div class="badge" style="background: rgba(239, 68, 68, 0.15); border-color: #EF4444; color: #F87171;">Production Bottlenecks Solved</div>
+    <h1>Toy Tutorials vs <span class="gradient-text">Real Production Systems</span></h1>
+    <p class="subtitle">Standard Jupyter notebook RAG breaks under strict container resource limits, multi-tenant isolation requirements, and out-of-domain hallucinations:</p>
+
+    <!-- 3 High Contrast Problem vs Solution Rows -->
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      
+      <!-- Card 1: Memory -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card" style="border-left: 4px solid #EF4444;">
+          <div style="color: #F87171; font-weight: 800; font-size: 15px; margin-bottom: 6px;">❌ Heavy PyTorch OOM Crashes</div>
+          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Standard sentence-transformers imports heavy PyTorch wheels (~800MB), exceeding 1GB serverless caps and crashing containers.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #10B981; background: rgba(16, 185, 129, 0.08);">
+          <div style="color: #34D399; font-weight: 800; font-size: 15px; margin-bottom: 6px;">✓ FastEmbed ONNX (70% Less RAM)</div>
+          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Quantized ONNX runtime (bge-small-en-v1.5) cold-starts in 2.22s and peaks at only <strong>423.2MB RAM</strong> under full load.</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Privacy -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card" style="border-left: 4px solid #EF4444;">
+          <div style="color: #F87171; font-weight: 800; font-size: 15px; margin-bottom: 6px;">❌ Multi-Tenant Data Leaks</div>
+          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Storing vector collections on shared persistent disk leaks previous users' confidential documents across sessions.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #10B981; background: rgba(16, 185, 129, 0.08);">
+          <div style="color: #34D399; font-weight: 800; font-size: 15px; margin-bottom: 6px;">✓ Ephemeral RAM Isolation</div>
+          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Collections live strictly in memory (chromadb.EphemeralClient) tied to session UUIDs with an LRU cap (max 10). Zero disk footprint.</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Hallucinations -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card" style="border-left: 4px solid #EF4444;">
+          <div style="color: #F87171; font-weight: 800; font-size: 15px; margin-bottom: 6px;">❌ Hallucinations & Wasted API Bills</div>
+          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Irrelevant queries invoke full LLM completions, burning expensive API tokens while fabricating unstated medical claims.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #10B981; background: rgba(16, 185, 129, 0.08);">
+          <div style="color: #34D399; font-weight: 800; font-size: 15px; margin-bottom: 6px;">✓ Two-Layer Refusal Gate (<25ms)</div>
+          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Cosine similarity gate (s >= 0.48) halts unrelated queries at the vector stage in <strong>18ms with 0 tokens billed</strong> ($0.00 spent).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Architectural Trade-offs • Cloud Budget Discipline</div>
+    <div style="color: #38BDF8; font-weight: 700;">Swipe right for the system pipeline ➔</div>
+  </div>
 </body>
 </html>
