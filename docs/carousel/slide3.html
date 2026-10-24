@@ -1,174 +1,255 @@
 <!DOCTYPE html>
 <html>
 <head><style>
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    margin: 0;
-    padding: 50px 60px;
-    width: 1200px;
-    height: 1200px;
-    background-color: #070B14;
+    width: 1080px;
+    height: 1350px;
+    background: #070A12;
     background-image: 
-      radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
-      radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.18) 0%, transparent 45%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      radial-gradient(circle at 85% 10%, rgba(0, 229, 255, 0.20) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #F8FAFC;
+    padding: 65px 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-  .mono { font-family: 'Consolas', 'Courier New', monospace; }
-  .badge {
-    display: inline-flex;
+  .mono { font-family: 'SF Mono', 'Consolas', 'Courier New', monospace; }
+
+  /* Top Bar */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: rgba(6, 182, 212, 0.15);
-    border: 1px solid rgba(6, 182, 212, 0.4);
-    color: #38BDF8;
+    height: 60px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.35), rgba(99, 102, 241, 0.3));
+    border: 1.5px solid rgba(0, 229, 255, 0.6);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+  }
+  .brand-tag {
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: #38BDF8;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
-  .slide-counter {
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: #0F172A;
-    border: 1px solid #334155;
-    color: #94A3B8;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .card {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  }
-  .card-highlight {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 11, 20, 0.9));
-    border: 1.5px solid rgba(6, 182, 212, 0.4);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
-  }
-  h1 {
-    font-size: 46px;
+  .brand-title {
+    font-size: 24px;
     font-weight: 900;
-    line-height: 1.15;
-    margin: 12px 0;
     color: #FFFFFF;
     letter-spacing: -0.02em;
   }
-  .gradient-text {
-    background: linear-gradient(90deg, #38BDF8, #2DD4BF, #34D399);
+  .slide-counter {
+    padding: 9px 22px;
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    color: #94A3B8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  /* Pills */
+  .pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 12px;
+  }
+  .pill-cyan {
+    background: rgba(0, 229, 255, 0.15);
+    border: 1.5px solid rgba(0, 229, 255, 0.5);
+    color: #38BDF8;
+  }
+  .pill-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1.5px solid rgba(16, 185, 129, 0.5);
+    color: #34D399;
+  }
+  .pill-coral {
+    background: rgba(248, 113, 113, 0.15);
+    border: 1.5px solid rgba(248, 113, 113, 0.5);
+    color: #F87171;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+  }
+  .gradient-cyan {
+    background: linear-gradient(135deg, #00E5FF 0%, #38BDF8 60%, #818CF8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  p.subtitle {
-    font-size: 18px;
-    line-height: 1.45;
-    color: #CBD5E1;
-    margin: 0 0 16px 0;
+  .gradient-emerald {
+    background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+  .gradient-coral {
+    background: linear-gradient(135deg, #F87171 0%, #FB7185 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p.lead-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #94A3B8;
+    font-weight: 400;
+  }
+
+  /* Cards */
+  .card-glow {
+    background: linear-gradient(165deg, rgba(16, 26, 48, 0.95) 0%, rgba(9, 14, 28, 0.98) 100%);
+    border: 1.5px solid rgba(0, 229, 255, 0.4);
+    border-radius: 26px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 229, 255, 0.15);
+  }
+
+  /* Footer */
   .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #1E293B;
-    padding-top: 18px;
-    font-size: 14px;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+    padding-top: 24px;
+    height: 60px;
+    font-size: 17px;
+    color: #64748B;
+  }
+  .footer-name {
     color: #94A3B8;
+    font-weight: 600;
+  }
+  .footer-name strong {
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+  .footer-action {
+    color: #38BDF8;
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 </style></head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="width: 44px; height: 44px; background: rgba(16, 185, 129, 0.2); border: 1px solid #10B981; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;">⚙️</div>
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">⚙️</div>
       <div>
-        <div style="font-size: 12px; color: #34D399; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">System Architecture</div>
-        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">The 4-Stage Production Pipeline</div>
+        <div class="brand-tag">Modular LCEL Flow</div>
+        <div class="brand-title">System Pipeline</div>
       </div>
     </div>
-    <div class="slide-counter mono">Slide 03 / 05</div>
+    <div class="slide-counter mono">03 / 05</div>
   </div>
 
-  <div style="margin: auto 0;">
-    <div class="badge">Modular LCEL Architecture</div>
-    <h1>Engineered for <span class="gradient-text">High Reliability</span> & Speed</h1>
-    <p class="subtitle">Every stage in the pipeline is engineered with deterministic validation, strict type hints, and automated Pytest harnesses:</p>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 10px 0;">
+    <div>
+      <div class="pill-badge pill-cyan">Deterministic Architecture</div>
+      <h1>Engineered for <span class="gradient-cyan">Sub-Second Speed</span> and Zero Data Leaks</h1>
+      <p class="lead-text">Every single pipeline step uses strict type validation, custom exception hierarchies, and automated Pydantic schema validation:</p>
+    </div>
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <!-- 4 Pipeline Cards (2x2 Grid) -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
       
       <!-- Stage 1 -->
-      <div class="card" style="background: rgba(15, 23, 42, 0.95);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <span class="mono" style="color: #38BDF8; font-size: 12px; font-weight: bold; background: rgba(6, 182, 212, 0.15); padding: 3px 8px; border-radius: 4px; border: 1px solid #06B6D4;">STAGE 01</span>
-          <span class="mono" style="color: #64748B; font-size: 12px;">src/ingest.py</span>
+      <div class="card-glow" style="padding: 32px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 14px; font-weight: 800; color: #38BDF8; background: rgba(0, 229, 255, 0.18); padding: 5px 12px; border-radius: 6px;">STAGE 01</span>
+          <span class="mono" style="font-size: 13px; color: #94A3B8;">src/ingest.py</span>
         </div>
-        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">Ingestion & Normalization</div>
-        <div style="color: #94A3B8; font-size: 13.5px; line-height: 1.5;">
-          • <strong>1-Indexed Offset:</strong> PyPDF 0-indexed pages mapped to physical <code>page + 1</code>.<br>
-          • <strong>SHA-256 Digest:</strong> Byte hashing skips duplicate indexing.<br>
-          • <strong>Scanned PDF Guard:</strong> Text-density check raises ScannedPDFError.
-        </div>
+        <h3 style="font-size: 26px; font-weight: 900; color: #FFFFFF; margin-bottom: 14px;">Deterministic Ingest</h3>
+        <ul style="list-style: none; font-size: 18px; color: #CBD5E1; line-height: 1.65;">
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">1-Indexed Offset:</strong> PyPDF 0-index corrected to physical document page numbers.</li>
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">SHA-256 Hashing:</strong> Byte checksums skip redundant document re-indexing.</li>
+          <li>• <strong style="color: #FFFFFF;">Scanned Guard:</strong> Rejects blank scanned image PDFs gracefully.</li>
+        </ul>
       </div>
 
       <!-- Stage 2 -->
-      <div class="card" style="background: rgba(15, 23, 42, 0.95);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <span class="mono" style="color: #34D399; font-size: 12px; font-weight: bold; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 4px; border: 1px solid #10B981;">STAGE 02</span>
-          <span class="mono" style="color: #64748B; font-size: 12px;">FastEmbed ONNX</span>
+      <div class="card-glow" style="padding: 32px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 14px; font-weight: 800; color: #34D399; background: rgba(16, 185, 129, 0.18); padding: 5px 12px; border-radius: 6px;">STAGE 02</span>
+          <span class="mono" style="font-size: 13px; color: #94A3B8;">FastEmbed ONNX</span>
         </div>
-        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">Quantized ONNX Embeddings</div>
-        <div style="color: #94A3B8; font-size: 13.5px; line-height: 1.5;">
-          • <strong>Model:</strong> BAAI/bge-small-en-v1.5 (384-dimensional).<br>
-          • <strong>Runtime:</strong> Stripped 800MB PyTorch dependency completely.<br>
-          • <strong>Efficiency:</strong> 2.22s cold start, only +136MB memory footprint.
-        </div>
+        <h3 style="font-size: 26px; font-weight: 900; color: #FFFFFF; margin-bottom: 14px;">Quantized Vectors</h3>
+        <ul style="list-style: none; font-size: 18px; color: #CBD5E1; line-height: 1.65;">
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">Model:</strong> BAAI/bge-small-en-v1.5 quantized embeddings (384-dimensions).</li>
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">Zero PyTorch:</strong> Completely eliminates 800MB heavyweight wheels.</li>
+          <li>• <strong style="color: #FFFFFF;">Cold Start:</strong> 2.22s embedding init on a standard single-core CPU.</li>
+        </ul>
       </div>
 
       <!-- Stage 3 -->
-      <div class="card" style="background: rgba(15, 23, 42, 0.95);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <span class="mono" style="color: #38BDF8; font-size: 12px; font-weight: bold; background: rgba(6, 182, 212, 0.15); padding: 3px 8px; border-radius: 4px; border: 1px solid #06B6D4;">STAGE 03</span>
-          <span class="mono" style="color: #64748B; font-size: 12px;">src/retriever.py</span>
+      <div class="card-glow" style="padding: 32px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 14px; font-weight: 800; color: #F59E0B; background: rgba(245, 158, 11, 0.18); padding: 5px 12px; border-radius: 6px;">STAGE 03</span>
+          <span class="mono" style="font-size: 13px; color: #94A3B8;">src/retriever.py</span>
         </div>
-        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">Ephemeral Vector Store</div>
-        <div style="color: #94A3B8; font-size: 13.5px; line-height: 1.5;">
-          • <strong>Zero Disk Retention:</strong> Collections live in RAM via EphemeralClient.<br>
-          • <strong>Session Isolation:</strong> Keyed to unique session UUIDs.<br>
-          • <strong>LRU Eviction Cap:</strong> Active collections capped at 10 to avoid leaks.
-        </div>
+        <h3 style="font-size: 26px; font-weight: 900; color: #FFFFFF; margin-bottom: 14px;">In-Memory Isolation</h3>
+        <ul style="list-style: none; font-size: 18px; color: #CBD5E1; line-height: 1.65;">
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">Zero Disk Retention:</strong> Collections live in RAM via EphemeralClient.</li>
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">Session Privacy:</strong> Dedicated collection keys per user UUID.</li>
+          <li>• <strong style="color: #FFFFFF;">LRU Eviction:</strong> Old sessions purged after 10 active collections.</li>
+        </ul>
       </div>
 
       <!-- Stage 4 -->
-      <div class="card" style="background: rgba(15, 23, 42, 0.95);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <span class="mono" style="color: #34D399; font-size: 12px; font-weight: bold; background: rgba(16, 185, 129, 0.15); padding: 3px 8px; border-radius: 4px; border: 1px solid #10B981;">STAGE 04</span>
-          <span class="mono" style="color: #64748B; font-size: 12px;">src/chain.py</span>
+      <div class="card-glow" style="padding: 32px 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 14px; font-weight: 800; color: #EC4899; background: rgba(236, 72, 153, 0.18); padding: 5px 12px; border-radius: 6px;">STAGE 04</span>
+          <span class="mono" style="font-size: 13px; color: #94A3B8;">src/chain.py</span>
         </div>
-        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF; margin-bottom: 8px;">Two-Layer Guardrails</div>
-        <div style="color: #94A3B8; font-size: 13.5px; line-height: 1.5;">
-          • <strong>Layer 1 Gate:</strong> Vector cosine similarity threshold (s >= 0.48).<br>
-          • <strong>Layer 2 Grounding:</strong> XML &lt;document_context&gt; prompt isolation.<br>
-          • <strong>Conditional Rewriter:</strong> History contextualizer only runs on Turn 2+.
-        </div>
+        <h3 style="font-size: 26px; font-weight: 900; color: #FFFFFF; margin-bottom: 14px;">Two-Layer Guardrails</h3>
+        <ul style="list-style: none; font-size: 18px; color: #CBD5E1; line-height: 1.65;">
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">Layer 1 Math Gate:</strong> Cosine similarity halts off-topic queries in 18ms.</li>
+          <li style="margin-bottom: 10px;">• <strong style="color: #FFFFFF;">Layer 2 Grounding:</strong> XML prompt sandbox blocks injection attacks.</li>
+          <li>• <strong style="color: #FFFFFF;">Smart Rewriting:</strong> Condenses history only from Turn 2 onwards.</li>
+        </ul>
       </div>
 
     </div>
   </div>
 
   <div class="footer">
-    <div>Deterministic System Design • Multi-Tenant Security</div>
-    <div style="color: #38BDF8; font-weight: 700;">Swipe right to see live interaction evidence ➔</div>
+    <div class="footer-name">Production Software Architecture • Clean Code</div>
+    <div class="footer-action">Swipe to see live dialogue proof →</div>
   </div>
 </body>
 </html>

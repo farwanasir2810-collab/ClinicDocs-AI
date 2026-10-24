@@ -1,155 +1,236 @@
 <!DOCTYPE html>
 <html>
 <head><style>
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    margin: 0;
-    padding: 50px 60px;
-    width: 1200px;
-    height: 1200px;
-    background-color: #070B14;
+    width: 1080px;
+    height: 1350px;
+    background: #070A12;
     background-image: 
-      radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
-      radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.18) 0%, transparent 45%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      radial-gradient(circle at 85% 10%, rgba(0, 229, 255, 0.20) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #F8FAFC;
+    padding: 65px 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-  .mono { font-family: 'Consolas', 'Courier New', monospace; }
-  .badge {
-    display: inline-flex;
+  .mono { font-family: 'SF Mono', 'Consolas', 'Courier New', monospace; }
+
+  /* Top Bar */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: rgba(6, 182, 212, 0.15);
-    border: 1px solid rgba(6, 182, 212, 0.4);
-    color: #38BDF8;
+    height: 60px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.35), rgba(99, 102, 241, 0.3));
+    border: 1.5px solid rgba(0, 229, 255, 0.6);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+  }
+  .brand-tag {
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: #38BDF8;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
-  .slide-counter {
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: #0F172A;
-    border: 1px solid #334155;
-    color: #94A3B8;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .card {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  }
-  .card-highlight {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 11, 20, 0.9));
-    border: 1.5px solid rgba(6, 182, 212, 0.4);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
-  }
-  h1 {
-    font-size: 46px;
+  .brand-title {
+    font-size: 24px;
     font-weight: 900;
-    line-height: 1.15;
-    margin: 12px 0;
     color: #FFFFFF;
     letter-spacing: -0.02em;
   }
-  .gradient-text {
-    background: linear-gradient(90deg, #38BDF8, #2DD4BF, #34D399);
+  .slide-counter {
+    padding: 9px 22px;
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    color: #94A3B8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  /* Pills */
+  .pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 12px;
+  }
+  .pill-cyan {
+    background: rgba(0, 229, 255, 0.15);
+    border: 1.5px solid rgba(0, 229, 255, 0.5);
+    color: #38BDF8;
+  }
+  .pill-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1.5px solid rgba(16, 185, 129, 0.5);
+    color: #34D399;
+  }
+  .pill-coral {
+    background: rgba(248, 113, 113, 0.15);
+    border: 1.5px solid rgba(248, 113, 113, 0.5);
+    color: #F87171;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+  }
+  .gradient-cyan {
+    background: linear-gradient(135deg, #00E5FF 0%, #38BDF8 60%, #818CF8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  p.subtitle {
-    font-size: 18px;
-    line-height: 1.45;
-    color: #CBD5E1;
-    margin: 0 0 16px 0;
+  .gradient-emerald {
+    background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+  .gradient-coral {
+    background: linear-gradient(135deg, #F87171 0%, #FB7185 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p.lead-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #94A3B8;
+    font-weight: 400;
+  }
+
+  /* Cards */
+  .card-glow {
+    background: linear-gradient(165deg, rgba(16, 26, 48, 0.95) 0%, rgba(9, 14, 28, 0.98) 100%);
+    border: 1.5px solid rgba(0, 229, 255, 0.4);
+    border-radius: 26px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 229, 255, 0.15);
+  }
+
+  /* Footer */
   .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #1E293B;
-    padding-top: 18px;
-    font-size: 14px;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+    padding-top: 24px;
+    height: 60px;
+    font-size: 17px;
+    color: #64748B;
+  }
+  .footer-name {
     color: #94A3B8;
+    font-weight: 600;
+  }
+  .footer-name strong {
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+  .footer-action {
+    color: #38BDF8;
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 </style></head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="width: 44px; height: 44px; background: rgba(239, 68, 68, 0.2); border: 1px solid #EF4444; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;">⚠️</div>
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">⚡</div>
       <div>
-        <div style="font-size: 12px; color: #F87171; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">The Engineering Challenge</div>
-        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">Why 90% of RAG Demos Fail in Production</div>
+        <div class="brand-tag">System Engineering</div>
+        <div class="brand-title">The 3 Bottlenecks</div>
       </div>
     </div>
-    <div class="slide-counter mono">Slide 02 / 05</div>
+    <div class="slide-counter mono">02 / 05</div>
   </div>
 
-  <div style="margin: auto 0;">
-    <div class="badge" style="background: rgba(239, 68, 68, 0.15); border-color: #EF4444; color: #F87171;">Production Bottlenecks Solved</div>
-    <h1>Toy Tutorials vs <span class="gradient-text">Real Production Systems</span></h1>
-    <p class="subtitle">Standard Jupyter notebook RAG breaks under strict container resource limits, multi-tenant isolation requirements, and out-of-domain hallucinations:</p>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 10px 0;">
+    <div>
+      <div class="pill-badge pill-coral">Why Tutorials Lie To You</div>
+      <h1>Tutorial Demos vs <span class="gradient-emerald">Production Systems</span></h1>
+      <p class="lead-text">Standard tutorial RAG breaks under strict container resource limits, multi-tenant isolation requirements, and off-topic questions. Here is how I solved each:</p>
+    </div>
 
-    <!-- 3 High Contrast Problem vs Solution Rows -->
-    <div style="display: flex; flex-direction: column; gap: 16px;">
-      
-      <!-- Card 1: Memory -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-        <div class="card" style="border-left: 4px solid #EF4444;">
-          <div style="color: #F87171; font-weight: 800; font-size: 15px; margin-bottom: 6px;">❌ Heavy PyTorch OOM Crashes</div>
-          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Standard sentence-transformers imports heavy PyTorch wheels (~800MB), exceeding 1GB serverless caps and crashing containers.</div>
-        </div>
-        <div class="card" style="border-left: 4px solid #10B981; background: rgba(16, 185, 129, 0.08);">
-          <div style="color: #34D399; font-weight: 800; font-size: 15px; margin-bottom: 6px;">✓ FastEmbed ONNX (70% Less RAM)</div>
-          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Quantized ONNX runtime (bge-small-en-v1.5) cold-starts in 2.22s and peaks at only <strong>423.2MB RAM</strong> under full load.</div>
-        </div>
+    <!-- Bottleneck 1 -->
+    <div style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(16, 24, 44, 0.95) 100%); border: 1.5px solid rgba(239, 68, 68, 0.4); border-left: 8px solid #EF4444; border-radius: 22px; padding: 28px 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <span style="font-size: 19px; font-weight: 900; color: #EF4444; letter-spacing: 0.05em; text-transform: uppercase;">01 • The PyTorch Memory Bloat Trap</span>
+        <span class="mono" style="font-size: 14px; color: #34D399; font-weight: 800; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 5px 14px; border-radius: 6px;">SOLUTION: FastEmbed ONNX</span>
       </div>
-
-      <!-- Card 2: Privacy -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-        <div class="card" style="border-left: 4px solid #EF4444;">
-          <div style="color: #F87171; font-weight: 800; font-size: 15px; margin-bottom: 6px;">❌ Multi-Tenant Data Leaks</div>
-          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Storing vector collections on shared persistent disk leaks previous users' confidential documents across sessions.</div>
-        </div>
-        <div class="card" style="border-left: 4px solid #10B981; background: rgba(16, 185, 129, 0.08);">
-          <div style="color: #34D399; font-weight: 800; font-size: 15px; margin-bottom: 6px;">✓ Ephemeral RAM Isolation</div>
-          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Collections live strictly in memory (chromadb.EphemeralClient) tied to session UUIDs with an LRU cap (max 10). Zero disk footprint.</div>
-        </div>
+      <p style="font-size: 20px; color: #CBD5E1; line-height: 1.5; margin-bottom: 14px;">
+        <strong style="color: #F87171;">The Trap:</strong> Default <code class="mono" style="color: #F87171;">sentence-transformers</code> loads ~800MB PyTorch wheels. In 1GB serverless containers, cold starts crash instantly from Out-Of-Memory (OOM).
+      </p>
+      <div style="background: rgba(7, 11, 20, 0.9); border-radius: 12px; padding: 16px 20px; border: 1.5px solid rgba(16, 185, 129, 0.35); font-size: 19px; color: #F1F5F9;">
+        <strong style="color: #34D399;">✓ My Production Fix:</strong> Quantized ONNX runtime (<code class="mono">bge-small-en-v1.5</code>). PyTorch stripped completely — cold starts in <strong>2.22s</strong> and peaks at only <strong>423MB RAM</strong> (70% savings).
       </div>
+    </div>
 
-      <!-- Card 3: Hallucinations -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-        <div class="card" style="border-left: 4px solid #EF4444;">
-          <div style="color: #F87171; font-weight: 800; font-size: 15px; margin-bottom: 6px;">❌ Hallucinations & Wasted API Bills</div>
-          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Irrelevant queries invoke full LLM completions, burning expensive API tokens while fabricating unstated medical claims.</div>
-        </div>
-        <div class="card" style="border-left: 4px solid #10B981; background: rgba(16, 185, 129, 0.08);">
-          <div style="color: #34D399; font-weight: 800; font-size: 15px; margin-bottom: 6px;">✓ Two-Layer Refusal Gate (<25ms)</div>
-          <div style="color: #CBD5E1; font-size: 13.5px; line-height: 1.45;">Cosine similarity gate (s >= 0.48) halts unrelated queries at the vector stage in <strong>18ms with 0 tokens billed</strong> ($0.00 spent).</div>
-        </div>
+    <!-- Bottleneck 2 -->
+    <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(16, 24, 44, 0.95) 100%); border: 1.5px solid rgba(245, 158, 11, 0.4); border-left: 8px solid #F59E0B; border-radius: 22px; padding: 28px 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <span style="font-size: 19px; font-weight: 900; color: #F59E0B; letter-spacing: 0.05em; text-transform: uppercase;">02 • Multi-Tenant Data Leaks</span>
+        <span class="mono" style="font-size: 14px; color: #34D399; font-weight: 800; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 5px 14px; border-radius: 6px;">SOLUTION: Ephemeral RAM</span>
       </div>
+      <p style="font-size: 20px; color: #CBD5E1; line-height: 1.5; margin-bottom: 14px;">
+        <strong style="color: #F59E0B;">The Trap:</strong> Saving vector collections to local disk files risks leaking confidential clinic documents across sessions and fills container disk space over time.
+      </p>
+      <div style="background: rgba(7, 11, 20, 0.9); border-radius: 12px; padding: 16px 20px; border: 1.5px solid rgba(16, 185, 129, 0.35); font-size: 19px; color: #F1F5F9;">
+        <strong style="color: #34D399;">✓ My Production Fix:</strong> Pure in-memory vector store (<code class="mono">chromadb.EphemeralClient</code>) isolated by session UUIDs with automated LRU memory eviction. Zero disk traces left behind.
+      </div>
+    </div>
 
+    <!-- Bottleneck 3 -->
+    <div style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(16, 24, 44, 0.95) 100%); border: 1.5px solid rgba(0, 229, 255, 0.4); border-left: 8px solid #00E5FF; border-radius: 22px; padding: 28px 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <span style="font-size: 19px; font-weight: 900; color: #38BDF8; letter-spacing: 0.05em; text-transform: uppercase;">03 • Hallucinations & Wasted API Spend</span>
+        <span class="mono" style="font-size: 14px; color: #34D399; font-weight: 800; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 5px 14px; border-radius: 6px;">SOLUTION: Vector Math Gate</span>
+      </div>
+      <p style="font-size: 20px; color: #CBD5E1; line-height: 1.5; margin-bottom: 14px;">
+        <strong style="color: #38BDF8;">The Trap:</strong> Passing off-topic questions directly to LLMs burns costly API tokens and risks generating dangerous medical hallucinations.
+      </p>
+      <div style="background: rgba(7, 11, 20, 0.9); border-radius: 12px; padding: 16px 20px; border: 1.5px solid rgba(16, 185, 129, 0.35); font-size: 19px; color: #F1F5F9;">
+        <strong style="color: #34D399;">✓ My Production Fix:</strong> Cosine similarity threshold (<code class="mono">s &gt;= 0.48</code>). Unrelated queries are rejected in <strong>18ms</strong> before invoking the LLM — <strong>$0.00 billed</strong>.
+      </div>
     </div>
   </div>
 
   <div class="footer">
-    <div>Architectural Trade-offs • Cloud Budget Discipline</div>
-    <div style="color: #38BDF8; font-weight: 700;">Swipe right for the system pipeline ➔</div>
+    <div class="footer-name">ClinicDocs AI • Architecture Trade-offs</div>
+    <div class="footer-action">Swipe for the system pipeline →</div>
   </div>
 </body>
 </html>

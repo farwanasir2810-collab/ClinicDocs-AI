@@ -1,169 +1,254 @@
 <!DOCTYPE html>
 <html>
 <head><style>
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    margin: 0;
-    padding: 50px 60px;
-    width: 1200px;
-    height: 1200px;
-    background-color: #070B14;
+    width: 1080px;
+    height: 1350px;
+    background: #070A12;
     background-image: 
-      radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
-      radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.18) 0%, transparent 45%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      radial-gradient(circle at 85% 10%, rgba(0, 229, 255, 0.20) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #F8FAFC;
+    padding: 65px 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-  .mono { font-family: 'Consolas', 'Courier New', monospace; }
-  .badge {
-    display: inline-flex;
+  .mono { font-family: 'SF Mono', 'Consolas', 'Courier New', monospace; }
+
+  /* Top Bar */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: rgba(6, 182, 212, 0.15);
-    border: 1px solid rgba(6, 182, 212, 0.4);
-    color: #38BDF8;
+    height: 60px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.35), rgba(99, 102, 241, 0.3));
+    border: 1.5px solid rgba(0, 229, 255, 0.6);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+  }
+  .brand-tag {
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: #38BDF8;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
-  .slide-counter {
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: #0F172A;
-    border: 1px solid #334155;
-    color: #94A3B8;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .card {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  }
-  .card-highlight {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 11, 20, 0.9));
-    border: 1.5px solid rgba(6, 182, 212, 0.4);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
-  }
-  h1 {
-    font-size: 46px;
+  .brand-title {
+    font-size: 24px;
     font-weight: 900;
-    line-height: 1.15;
-    margin: 12px 0;
     color: #FFFFFF;
     letter-spacing: -0.02em;
   }
-  .gradient-text {
-    background: linear-gradient(90deg, #38BDF8, #2DD4BF, #34D399);
+  .slide-counter {
+    padding: 9px 22px;
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    color: #94A3B8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  /* Pills */
+  .pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 12px;
+  }
+  .pill-cyan {
+    background: rgba(0, 229, 255, 0.15);
+    border: 1.5px solid rgba(0, 229, 255, 0.5);
+    color: #38BDF8;
+  }
+  .pill-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1.5px solid rgba(16, 185, 129, 0.5);
+    color: #34D399;
+  }
+  .pill-coral {
+    background: rgba(248, 113, 113, 0.15);
+    border: 1.5px solid rgba(248, 113, 113, 0.5);
+    color: #F87171;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+  }
+  .gradient-cyan {
+    background: linear-gradient(135deg, #00E5FF 0%, #38BDF8 60%, #818CF8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  p.subtitle {
-    font-size: 18px;
-    line-height: 1.45;
-    color: #CBD5E1;
-    margin: 0 0 16px 0;
+  .gradient-emerald {
+    background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+  .gradient-coral {
+    background: linear-gradient(135deg, #F87171 0%, #FB7185 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p.lead-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #94A3B8;
+    font-weight: 400;
+  }
+
+  /* Cards */
+  .card-glow {
+    background: linear-gradient(165deg, rgba(16, 26, 48, 0.95) 0%, rgba(9, 14, 28, 0.98) 100%);
+    border: 1.5px solid rgba(0, 229, 255, 0.4);
+    border-radius: 26px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 229, 255, 0.15);
+  }
+
+  /* Footer */
   .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #1E293B;
-    padding-top: 18px;
-    font-size: 14px;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+    padding-top: 24px;
+    height: 60px;
+    font-size: 17px;
+    color: #64748B;
+  }
+  .footer-name {
     color: #94A3B8;
+    font-weight: 600;
+  }
+  .footer-name strong {
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+  .footer-action {
+    color: #38BDF8;
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 </style></head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="width: 44px; height: 44px; background: rgba(6, 182, 212, 0.2); border: 1px solid #06B6D4; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;">🩺</div>
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">🩺</div>
       <div>
-        <div style="font-size: 12px; color: #38BDF8; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">Flagship AI Case Study</div>
-        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">ClinicDocs AI</div>
+        <div class="brand-tag">Production AI Case Study</div>
+        <div class="brand-title">ClinicDocs AI</div>
       </div>
     </div>
-    <div class="slide-counter mono">Slide 01 / 05</div>
+    <div class="slide-counter mono">01 / 05</div>
   </div>
 
-  <div style="margin: auto 0;">
-    <div class="badge">Production Conversational RAG</div>
-    <h1>Chat with Clinical Policies with <span class="gradient-text">Zero Hallucinations</span> & Exact Citations</h1>
-    <p class="subtitle">A production-grade, privacy-first web application that turns static clinic policies into verified conversational answers with 1-indexed page citations and two-layer refusal guardrails.</p>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 10px 0;">
+    <div>
+      <div class="pill-badge pill-cyan">Healthcare Conversational RAG</div>
+      <h1>Why 90% of RAG bots fail in production — <span class="gradient-cyan">and how I built one that doesn't.</span></h1>
+      <p class="lead-text">Most tutorials crash under tight server memory, leak patient files across sessions, and hallucinate under trick queries. Here is how I engineered past every bottleneck.</p>
+    </div>
 
-    <!-- Real UI Mockup Window -->
-    <div class="card-highlight" style="margin-bottom: 20px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1E293B; padding-bottom: 10px; margin-bottom: 14px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="width: 12px; height: 12px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
-          <span style="width: 12px; height: 12px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
-          <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
-          <span class="mono" style="font-size: 13px; color: #94A3B8; margin-left: 8px;">clinicdocs-ai.streamlit.app — Live Session Active</span>
+    <!-- Realistic App Mockup Window -->
+    <div class="card-glow" style="padding: 28px 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid rgba(255, 255, 255, 0.1); padding-bottom: 16px; margin-bottom: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="width: 14px; height: 14px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+          <span style="width: 14px; height: 14px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+          <span style="width: 14px; height: 14px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+          <span class="mono" style="font-size: 15px; color: #94A3B8; margin-left: 12px; font-weight: 600;">clinicdocs-ai.streamlit.app</span>
         </div>
-        <span class="mono" style="font-size: 12px; background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: bold;">✓ 10/10 EVALS PASSED</span>
+        <span class="mono" style="font-size: 14px; background: rgba(16, 185, 129, 0.15); color: #34D399; padding: 6px 14px; border-radius: 8px; border: 1.5px solid rgba(16, 185, 129, 0.4); font-weight: 800;">✓ 10/10 EVALS PASSED</span>
       </div>
 
-      <div style="background: rgba(10, 15, 26, 0.8); border: 1px solid #1E293B; border-radius: 12px; padding: 16px; margin-bottom: 12px;">
-        <span class="mono" style="color: #38BDF8; font-weight: bold; font-size: 14px;">User: </span>
-        <span style="color: #FFFFFF; font-size: 15px; font-weight: 600;">What are the clinic operating hours on Friday?</span>
+      <!-- User Query -->
+      <div style="background: rgba(255, 255, 255, 0.04); border: 1.5px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 18px 24px; margin-bottom: 16px;">
+        <div class="mono" style="font-size: 13px; color: #38BDF8; font-weight: 800; letter-spacing: 0.08em; margin-bottom: 6px;">PATIENT / USER QUERY:</div>
+        <div style="font-size: 21px; color: #FFFFFF; font-weight: 700;">"What are the clinic operating hours on Friday?"</div>
       </div>
 
-      <div style="background: #0A0F1A; border: 1px solid #1E293B; border-radius: 14px; padding: 18px;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-          <span class="mono" style="color: #2DD4BF; font-weight: bold; font-size: 13px;">🩺 ClinicDocs AI:</span>
-          <span class="mono" style="color: #94A3B8; font-size: 12px;">⏱️ Latency: 0.82s</span>
+      <!-- Verified Grounded Answer -->
+      <div style="background: rgba(7, 11, 20, 0.95); border: 1.5px solid rgba(0, 229, 255, 0.3); border-radius: 16px; padding: 22px 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span class="mono" style="color: #2DD4BF; font-weight: 800; font-size: 15px;">🩺 CLINICDOCS AI (VERIFIED GROUNDED):</span>
+          <span class="mono" style="color: #94A3B8; font-size: 14px; font-weight: 600;">⚡ 0.82s Latency</span>
         </div>
-        <div style="color: #E2E8F0; font-size: 15px; line-height: 1.5; margin-bottom: 12px;">
+        <div style="font-size: 19px; color: #E2E8F0; line-height: 1.55; margin-bottom: 18px;">
           On Friday, Noor Care Clinic operates in two shifts:<br>
-          • <strong>Morning Shift:</strong> 9:00 AM – 1:00 PM<br>
-          • <strong>Evening Shift:</strong> 3:00 PM – 8:00 PM<br>
-          <em>(The clinic is closed between 1:00 PM and 3:00 PM for Friday prayers).</em>
+          <strong style="color: #FFFFFF;">• Morning:</strong> 9:00 AM – 1:00 PM<br>
+          <strong style="color: #FFFFFF;">• Evening:</strong> 3:00 PM – 8:00 PM<br>
+          <span style="color: #94A3B8; font-size: 17px;">(Clinic is closed between 1:00 PM and 3:00 PM for Friday prayers)</span>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1E293B; padding-top: 10px; font-size: 13px;">
-          <span class="mono" style="color: #CBD5E1;">📄 <strong>Noor_Care_Clinic_FAQ.pdf</strong> <span style="color: #34D399; font-weight: bold;">— Page 1</span></span>
-          <span class="mono" style="background: rgba(6, 182, 212, 0.2); color: #38BDF8; padding: 2px 8px; border-radius: 4px; font-weight: bold; border: 1px solid #06B6D4;">Match: 78.2%</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1.5px solid rgba(255, 255, 255, 0.08); padding-top: 16px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 18px;">📄</span>
+            <span class="mono" style="font-size: 15px; color: #F8FAFC; font-weight: 700;">Noor_Care_Clinic_FAQ.pdf</span>
+            <span class="mono" style="font-size: 14px; color: #34D399; font-weight: 900; background: rgba(16, 185, 129, 0.2); border: 1.5px solid rgba(16, 185, 129, 0.45); padding: 3px 12px; border-radius: 6px;">Page 1</span>
+          </div>
+          <span class="mono" style="font-size: 14px; color: #38BDF8; font-weight: 800; background: rgba(0, 229, 255, 0.15); padding: 4px 14px; border-radius: 6px;">Similarity: 78.2%</span>
         </div>
       </div>
     </div>
 
-    <!-- 4 High-Contrast Stats -->
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
-      <div class="card" style="text-align: center; padding: 16px;">
-        <div class="mono" style="font-size: 26px; font-weight: 900; color: #38BDF8;">70%</div>
-        <div style="font-size: 12px; color: #94A3B8; margin-top: 4px; font-weight: 600;">RAM Savings (ONNX)</div>
+    <!-- 3 Big Metric Cards -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
+      <div style="background: rgba(13, 20, 36, 0.85); border: 1.5px solid rgba(0, 229, 255, 0.35); border-radius: 20px; padding: 24px 20px; text-align: center;">
+        <div style="font-size: 42px; font-weight: 900; color: #38BDF8; font-family: 'SF Mono', monospace;">-70%</div>
+        <div style="font-size: 16px; color: #F8FAFC; font-weight: 700; margin-top: 6px;">RAM Footprint</div>
+        <div style="font-size: 13px; color: #94A3B8; margin-top: 2px;">Quantized ONNX Engine</div>
       </div>
-      <div class="card" style="text-align: center; padding: 16px;">
-        <div class="mono" style="font-size: 26px; font-weight: 900; color: #34D399;">&lt; 25 ms</div>
-        <div style="font-size: 12px; color: #94A3B8; margin-top: 4px; font-weight: 600;">Refusal Gate Speed</div>
+      <div style="background: rgba(13, 20, 36, 0.85); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: 20px; padding: 24px 20px; text-align: center;">
+        <div style="font-size: 42px; font-weight: 900; color: #34D399; font-family: 'SF Mono', monospace;">&lt; 25ms</div>
+        <div style="font-size: 16px; color: #F8FAFC; font-weight: 700; margin-top: 6px;">Refusal Gate</div>
+        <div style="font-size: 13px; color: #94A3B8; margin-top: 2px;">Instant Vector Filter</div>
       </div>
-      <div class="card" style="text-align: center; padding: 16px;">
-        <div class="mono" style="font-size: 26px; font-weight: 900; color: #38BDF8;">0 Tokens</div>
-        <div style="font-size: 12px; color: #94A3B8; margin-top: 4px; font-weight: 600;">Wasted on OOD</div>
-      </div>
-      <div class="card" style="text-align: center; padding: 16px;">
-        <div class="mono" style="font-size: 26px; font-weight: 900; color: #34D399;">100%</div>
-        <div style="font-size: 12px; color: #94A3B8; margin-top: 4px; font-weight: 600;">Grounded Accuracy</div>
+      <div style="background: rgba(13, 20, 36, 0.85); border: 1.5px solid rgba(248, 113, 113, 0.35); border-radius: 20px; padding: 24px 20px; text-align: center;">
+        <div style="font-size: 42px; font-weight: 900; color: #F87171; font-family: 'SF Mono', monospace;">$0.00</div>
+        <div style="font-size: 16px; color: #F8FAFC; font-weight: 700; margin-top: 6px;">Off-Topic Cost</div>
+        <div style="font-size: 13px; color: #94A3B8; margin-top: 2px;">0 Tokens Wasted</div>
       </div>
     </div>
   </div>
 
   <div class="footer">
-    <div>Architected &amp; Built by <strong style="color: #FFFFFF;">Farwa Ali Nasir</strong> — AI &amp; ML Software Engineer</div>
-    <div style="color: #38BDF8; font-weight: 700;">Swipe right to inspect architecture ➔</div>
+    <div class="footer-name">Architected & Built by <strong>Farwa Ali Nasir</strong> • AI & ML Engineer</div>
+    <div class="footer-action">Swipe for the breakdown →</div>
   </div>
 </body>
 </html>

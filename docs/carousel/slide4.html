@@ -1,143 +1,221 @@
 <!DOCTYPE html>
 <html>
 <head><style>
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    margin: 0;
-    padding: 50px 60px;
-    width: 1200px;
-    height: 1200px;
-    background-color: #070B14;
+    width: 1080px;
+    height: 1350px;
+    background: #070A12;
     background-image: 
-      radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22) 0%, transparent 45%),
-      radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.18) 0%, transparent 45%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      radial-gradient(circle at 85% 10%, rgba(0, 229, 255, 0.20) 0%, transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #F8FAFC;
+    padding: 65px 65px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-  .mono { font-family: 'Consolas', 'Courier New', monospace; }
-  .badge {
-    display: inline-flex;
+  .mono { font-family: 'SF Mono', 'Consolas', 'Courier New', monospace; }
+
+  /* Top Bar */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: rgba(6, 182, 212, 0.15);
-    border: 1px solid rgba(6, 182, 212, 0.4);
-    color: #38BDF8;
+    height: 60px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand-icon {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.35), rgba(99, 102, 241, 0.3));
+    border: 1.5px solid rgba(0, 229, 255, 0.6);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 8px 24px rgba(0, 229, 255, 0.3);
+  }
+  .brand-tag {
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: #38BDF8;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
   }
-  .slide-counter {
-    padding: 6px 16px;
-    border-radius: 9999px;
-    background: #0F172A;
-    border: 1px solid #334155;
-    color: #94A3B8;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .card {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  }
-  .card-highlight {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(7, 11, 20, 0.9));
-    border: 1.5px solid rgba(6, 182, 212, 0.4);
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 15px 35px rgba(6, 182, 212, 0.12);
-  }
-  h1 {
-    font-size: 46px;
+  .brand-title {
+    font-size: 24px;
     font-weight: 900;
-    line-height: 1.15;
-    margin: 12px 0;
     color: #FFFFFF;
     letter-spacing: -0.02em;
   }
-  .gradient-text {
-    background: linear-gradient(90deg, #38BDF8, #2DD4BF, #34D399);
+  .slide-counter {
+    padding: 9px 22px;
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    color: #94A3B8;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  /* Pills */
+  .pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 12px;
+  }
+  .pill-cyan {
+    background: rgba(0, 229, 255, 0.15);
+    border: 1.5px solid rgba(0, 229, 255, 0.5);
+    color: #38BDF8;
+  }
+  .pill-emerald {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1.5px solid rgba(16, 185, 129, 0.5);
+    color: #34D399;
+  }
+  .pill-coral {
+    background: rgba(248, 113, 113, 0.15);
+    border: 1.5px solid rgba(248, 113, 113, 0.5);
+    color: #F87171;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    color: #FFFFFF;
+    margin-bottom: 14px;
+  }
+  .gradient-cyan {
+    background: linear-gradient(135deg, #00E5FF 0%, #38BDF8 60%, #818CF8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  p.subtitle {
-    font-size: 18px;
-    line-height: 1.45;
-    color: #CBD5E1;
-    margin: 0 0 16px 0;
+  .gradient-emerald {
+    background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+  .gradient-coral {
+    background: linear-gradient(135deg, #F87171 0%, #FB7185 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p.lead-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #94A3B8;
+    font-weight: 400;
+  }
+
+  /* Cards */
+  .card-glow {
+    background: linear-gradient(165deg, rgba(16, 26, 48, 0.95) 0%, rgba(9, 14, 28, 0.98) 100%);
+    border: 1.5px solid rgba(0, 229, 255, 0.4);
+    border-radius: 26px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 229, 255, 0.15);
+  }
+
+  /* Footer */
   .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #1E293B;
-    padding-top: 18px;
-    font-size: 14px;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+    padding-top: 24px;
+    height: 60px;
+    font-size: 17px;
+    color: #64748B;
+  }
+  .footer-name {
     color: #94A3B8;
+    font-weight: 600;
+  }
+  .footer-name strong {
+    color: #FFFFFF;
+    font-weight: 800;
+  }
+  .footer-action {
+    color: #38BDF8;
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 </style></head>
 <body>
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <div style="width: 44px; height: 44px; background: rgba(6, 182, 212, 0.2); border: 1px solid #06B6D4; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px;">💬</div>
+  <div class="top-bar">
+    <div class="brand">
+      <div class="brand-icon">🛡️</div>
       <div>
-        <div style="font-size: 12px; color: #38BDF8; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">Verified Evidence</div>
-        <div style="font-size: 20px; font-weight: 800; color: #FFFFFF;">Grounded Answers vs 18ms Refusals</div>
+        <div class="brand-tag">Verified Behavior</div>
+        <div class="brand-title">Live Query Tests</div>
       </div>
     </div>
-    <div class="slide-counter mono">Slide 04 / 05</div>
+    <div class="slide-counter mono">04 / 05</div>
   </div>
 
-  <div style="margin: auto 0;">
-    <div class="badge">Real In-App Interactions</div>
-    <h1>Strict Grounding vs <span class="gradient-text">Zero Token Refusal</span></h1>
-    <p class="subtitle">See how the system handles a verified clinical policy question compared to a semantically distant out-of-domain trick question:</p>
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 10px 0;">
+    <div>
+      <div class="pill-badge pill-emerald">Live Interrogation Test</div>
+      <h1>Strict Grounding vs <span class="gradient-coral">Zero-Token Refusal</span></h1>
+      <p class="lead-text">Two real side-by-side test cases showing how the system answers clinical policy questions versus rejecting out-of-scope trick queries:</p>
+    </div>
 
-    <!-- Case 1: In-Domain Grounded -->
-    <div class="card" style="border: 1.5px solid rgba(16, 185, 129, 0.4); margin-bottom: 18px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <span class="mono" style="color: #34D399; font-size: 13px; font-weight: bold;">✓ Case 1: Grounded Policy Question (1-Indexed Page Citation)</span>
-        <span class="mono" style="font-size: 12px; background: rgba(6, 182, 212, 0.15); color: #38BDF8; padding: 2px 8px; border-radius: 4px;">⏱️ Latency: 0.94s</span>
+    <!-- Test Case 1: Grounded -->
+    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 26, 48, 0.95) 100%); border: 2px solid rgba(16, 185, 129, 0.45); border-radius: 24px; padding: 30px 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <span class="mono" style="font-size: 15px; font-weight: 800; color: #34D399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 6px 14px; border-radius: 8px;">✓ TEST 1: IN-DOMAIN CLINICAL QUERY</span>
+        <span class="mono" style="font-size: 15px; color: #94A3B8; font-weight: 600;">Latency: 0.94s • 100% Grounded</span>
       </div>
-      <div style="background: #0A0F1A; border: 1px solid #1E293B; border-radius: 10px; padding: 12px; margin-bottom: 10px;">
-        <span class="mono" style="color: #38BDF8; font-weight: bold;">User: </span>
-        <span style="color: #FFFFFF; font-size: 14.5px; font-weight: 600;">How much is a specialist consultation, and what is the follow-up policy?</span>
+      <div style="background: rgba(255, 255, 255, 0.05); border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; font-size: 20px; color: #FFFFFF;">
+        <span class="mono" style="color: #38BDF8; font-weight: 800;">User Query: </span>"How much is a specialist consultation, and what is the follow-up policy?"
       </div>
-      <div style="background: rgba(10, 15, 26, 0.6); border-radius: 10px; padding: 14px; font-size: 14px; line-height: 1.5; color: #E2E8F0;">
-        A consultation with a Specialist Doctor (Cardiologist, Pediatrician, Dermatologist) costs <strong>PKR 3,000</strong>. Follow-up visits within 7 days of the initial consultation receive a <strong>50% discount (PKR 1,500)</strong>.
-        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #1E293B; display: flex; justify-content: space-between; font-size: 12px;" class="mono">
-          <span style="color: #CBD5E1;">📄 <strong>Clinic_Fee_Schedule_2026.pdf</strong> <span style="color: #34D399; font-weight: bold;">— Page 2</span></span>
-          <span style="color: #38BDF8;">Cosine Similarity: 81.4%</span>
+      <div style="background: rgba(7, 11, 20, 0.95); border-radius: 14px; padding: 20px 22px; border: 1.5px solid rgba(255, 255, 255, 0.08); font-size: 19px; color: #E2E8F0; line-height: 1.55;">
+        A consultation with a Specialist Doctor (Cardiologist, Pediatrician, Dermatologist) costs <strong style="color: #FFFFFF;">PKR 3,000</strong>. Follow-up visits within 7 days of the initial consultation receive a <strong style="color: #34D399;">50% discount (PKR 1,500)</strong>.
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1.5px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; font-size: 15px;">
+          <span class="mono" style="color: #F8FAFC;">📄 Clinic_Fee_Schedule_2026.pdf <strong style="color: #34D399; font-weight: 800;">— Page 2</strong></span>
+          <span class="mono" style="color: #38BDF8; font-weight: 800;">Cosine Match: 81.4%</span>
         </div>
       </div>
     </div>
 
-    <!-- Case 2: Out of domain refusal -->
-    <div class="card" style="border: 1.5px solid rgba(239, 68, 68, 0.4);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <span class="mono" style="color: #F87171; font-size: 13px; font-weight: bold;">🛡️ Case 2: Layer 1 Refusal Gate (Out-of-Domain Query)</span>
-        <span class="mono" style="font-size: 12px; background: rgba(239, 68, 68, 0.15); color: #F87171; padding: 2px 8px; border-radius: 4px; font-weight: bold;">⚡ 18ms (0 Tokens Billed)</span>
+    <!-- Test Case 2: Refused -->
+    <div style="background: linear-gradient(135deg, rgba(248, 113, 113, 0.08) 0%, rgba(28, 16, 24, 0.95) 100%); border: 2px solid rgba(248, 113, 113, 0.45); border-radius: 24px; padding: 30px 32px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <span class="mono" style="font-size: 15px; font-weight: 800; color: #F87171; background: rgba(248, 113, 113, 0.15); border: 1px solid rgba(248, 113, 113, 0.4); padding: 6px 14px; border-radius: 8px;">🛡️ TEST 2: OUT-OF-DOMAIN TRICK QUERY</span>
+        <span class="mono" style="font-size: 15px; color: #F87171; font-weight: 800;">⚡ 18ms Refusal • $0.00 Spent</span>
       </div>
-      <div style="background: #0A0F1A; border: 1px solid #1E293B; border-radius: 10px; padding: 12px; margin-bottom: 10px;">
-        <span class="mono" style="color: #38BDF8; font-weight: bold;">User: </span>
-        <span style="color: #FFFFFF; font-size: 14.5px; font-weight: 600;">What is the capital city of France?</span>
+      <div style="background: rgba(255, 255, 255, 0.05); border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; font-size: 20px; color: #FFFFFF;">
+        <span class="mono" style="color: #F87171; font-weight: 800;">User Query: </span>"What is the capital city of France?"
       </div>
-      <div style="background: rgba(10, 15, 26, 0.6); border-radius: 10px; padding: 14px; font-size: 14px; color: #CBD5E1;">
-        <div style="color: #FCA5A5; font-style: italic; font-size: 15px; margin-bottom: 8px;">"I couldn't find this in the uploaded documents."</div>
-        <div class="mono" style="font-size: 12px; color: #94A3B8; border-top: 1px solid #1E293B; padding-top: 8px;">
-          Max observed cosine similarity: <strong>0.361 &lt; 0.48 threshold</strong>. Query halted at vector retrieval stage. <strong>Zero LLM tokens used. $0.00 cost.</strong>
+      <div style="background: rgba(7, 11, 20, 0.95); border-radius: 14px; padding: 20px 22px; border: 1.5px solid rgba(255, 255, 255, 0.08); font-size: 19px; color: #E2E8F0; line-height: 1.55;">
+        <div style="color: #F87171; font-weight: 800; font-size: 20px; margin-bottom: 8px;">"I couldn't find this in the uploaded documents."</div>
+        <div style="font-size: 16px; color: #94A3B8; line-height: 1.55;">
+          Max observed cosine similarity: <span class="mono" style="color: #FFFFFF; font-weight: 700;">0.361 &lt; 0.48 threshold</span>. The query was intercepted at the vector stage. Zero LLM API calls made. <strong style="color: #34D399;">0 tokens billed.</strong>
         </div>
       </div>
     </div>
@@ -145,8 +223,8 @@
   </div>
 
   <div class="footer">
-    <div>Two-Layer Guardrails: Vector Math Gate + Strict Prompt Isolation</div>
-    <div style="color: #38BDF8; font-weight: 700;">Swipe right for measured telemetry ➔</div>
+    <div class="footer-name">Zero Hallucinations Guarantee • Security Guardrails</div>
+    <div class="footer-action">Swipe for benchmark stats →</div>
   </div>
 </body>
 </html>
